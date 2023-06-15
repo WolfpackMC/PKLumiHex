@@ -1,10 +1,11 @@
-LumiHeX
-=====
-Fork of [PKHeX](https://github.com/kwsch/PKHeX) with added support for Luminescent Platinum!
+PKLumiHeX
+==
+## Download: [Latest Release](https://github.com/TalonSabre/PKLumiHex/releases/latest)
+### Fork of [PKHeX](https://github.com/kwsch/PKHeX) with added support for Luminescent Platinum!
+### Currently, it is a Work in progress. As such, some features will not work when editing a Luminescent Platinum save.
+##
 
-Currently, it is a Work in progress. As such, some features will not work when editing a Luminescent Platinum save.
-
-## Features Luminescent Platinum saves will be able to use
+## Features working on Luminescent Platinum saves
 - Pokémon Editor (Box and Party)
   - Stat and Ability changes will display
   - New Pokémon Luminescent forms included!
@@ -15,14 +16,14 @@ Currently, it is a Work in progress. As such, some features will not work when e
 - Box Layout Editor
 - Seal Stickers Editor
 
-### Unconfirmed if Working
+## Unconfirmed if working
 - Poffin Editor
 - Trainer Info Editor
   - Specifically Gender, Version, Language, Adventure Info, and Stats
     - Luminescent only supports Brilliant Diamond Version, and the English Language!
 - Underground (Bag) Editor
 
-## Unimplemented Features
+## Unimplemented features
 - Event Flags Editor
   - Does not contain new flags
 - Pokédex Editor
