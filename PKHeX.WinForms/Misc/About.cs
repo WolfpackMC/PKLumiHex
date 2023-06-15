@@ -8,6 +8,7 @@ public partial class About : Form
     {
         InitializeComponent();
         WinFormsUtil.TranslateInterface(this, Main.CurrentLanguage);
+        RTB_PKHeXChangelog.Text = Properties.Resources.PKHeX_changelog;
         RTB_Changelog.Text = Properties.Resources.changelog;
         RTB_Shortcuts.Text = Properties.Resources.shortcuts;
         TC_About.SelectedIndex = (int)index;
@@ -18,4 +19,5 @@ public enum AboutPage
 {
     Shortcuts,
     Changelog,
+    PKHeXChangelog,
 }

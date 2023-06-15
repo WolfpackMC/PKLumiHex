@@ -171,6 +171,8 @@ namespace PKHeX.Core
         public new ZukanSpinda8b ZukanExtra { get; }
         public new UgCountRecord8b UgCount { get; }
 
+        public override GameVersion Version => GameVersion.BDSPLUMI;
+
         // First Savedata Expansion!
         public new RecordAddData8b RecordAdd { get; }
         public new MysteryBlock8b MysteryRecords { get; }

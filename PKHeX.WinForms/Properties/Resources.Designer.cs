@@ -211,16 +211,25 @@ namespace PKHeX.WinForms.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PKHeX - By Kaphotics
-        ///http://projectpokemon.org/pkhex/
+        ///   Looks up a localized string similar to LumiHeX
+        ///https://github.com/TalonSabre/LumiHeX/
         ///
-        ///23/02/27 - New Update:
-        /// - Added: Support for S/V 1.2.0
-        /// - Added: SV style menu sprites for all species/forms. Thanks @sora10pls &amp; @SciresM!
-        /// - Added: Gen5 Black/White City data can now be imported/exported, and Roamer status can be reset. Thanks @frefire!
-        /// - Added: Gen4/5 Geonet Location save file settings can now be viewed/changed. Thanks @abcboy101!
-        /// - Added: Gen4 Ranch now supports Toys from the Platinum game update. Thanks @Zazsona!
-        /// - Fixe [rest of string was truncated]&quot;;.
+        ///0.2.2
+        ///- Reimplement Update Checker
+        ///  - LumiHeX will let you know if an update is available!
+        ///- Lumi items should appear on the hold items list now
+        ///
+        ///0.2.1
+        ///- Fixed Batch Editor not changing box and party Pokemon
+        ///
+        ///0.2
+        ///- Lumi saves can now read items added to Luminescent
+        ///  - Things like the Everlasting Candy will not be removed from save
+        ///  - Can also add/remove them from your bag if you want
+        ///  - Will display gen 9 Pokemon again
+        ///
+        ///0.1.1
+        ///- Lumi saves [rest of string was truncated]&quot;;.
         /// </summary>
         public static string changelog {
             get {
@@ -588,7 +597,7 @@ namespace PKHeX.WinForms.Properties {
         ///MoveShopEditor=Attacken Tutor Editor
         ///RibbonEditor=Band Editor
         ///SAV_Apricorn=Aprikoko Editor
-        ///SAV_BerryField=Beerenfeld Ansicht
+        ///SAV_BerryFieldXY=Beerenfeld Ansicht
         ///SAV_BlockDump8=Spielstand Block Dump
         ///SAV_BoxLayout=Box Layout Editor
         ///SAV_BoxList=PC Ansicht
@@ -597,7 +606,7 @@ namespace PKHeX.WinForms.Properties {
         ///SAV_Database=Datenbank
         ///SAV_Encounters=Begegnungen
         ///SAV_EventFlags=Event Flag Editor
-        ///SAV_EventReset1 [rest of string was truncated]&quot;;.
+        ///SAV_EventReset1=Event Rücksetze [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lang_de {
             get {
@@ -615,7 +624,7 @@ namespace PKHeX.WinForms.Properties {
         ///MoveShopEditor=Move Shop Editor
         ///RibbonEditor=Ribbon Editor
         ///SAV_Apricorn=Apricorn Editor
-        ///SAV_BerryField=Berry Field Viewer
+        ///SAV_BerryFieldXY=Berry Field Viewer
         ///SAV_BlockDump8=Savedata Block Dump
         ///SAV_BoxLayout=Box Layout Editor
         ///SAV_BoxList=Storage Viewer
@@ -624,7 +633,8 @@ namespace PKHeX.WinForms.Properties {
         ///SAV_Database=Database
         ///SAV_Encounters=Database
         ///SAV_EventFlags=Event Flag Editor
-        ///SAV_EventReset1=Event Re [rest of string was truncated]&quot;;.
+        ///SAV_EventReset1=Event Resetter
+        ///SAV_Event [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lang_en {
             get {
@@ -642,13 +652,14 @@ namespace PKHeX.WinForms.Properties {
         ///MoveShopEditor=Editor de la Tienda de Movimientos
         ///RibbonEditor=Editor de Cintas
         ///SAV_Apricorn=Editor de Bonguri
-        ///SAV_BerryField=Visor de Campos de Bayas
+        ///SAV_BerryFieldXY=Visor de Campos de Bayas
         ///SAV_BlockDump8=Respaldo de bloques
         ///SAV_BoxLayout=Editor de fondos de Cajas
         ///SAV_BoxList=Visor de Almacenamiento
         ///SAV_Capture7GG=Editor de Récord de Captura
         ///SAV_CGearSkin=Editor de la apariencia C-Gear
-        ///SAV_Database=Ba [rest of string was truncated]&quot;;.
+        ///SAV_Database=Base de Datos
+        ///S [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lang_es {
             get {
@@ -666,7 +677,7 @@ namespace PKHeX.WinForms.Properties {
         ///MoveShopEditor=Éditeur de capacités
         ///RibbonEditor=Rubans
         ///SAV_Apricorn=Noigrumes
-        ///SAV_BerryField=Champs de Baies
+        ///SAV_BerryFieldXY=Champs de Baies
         ///SAV_BlockDump8=Sauvegarde des blocs de données
         ///SAV_BoxLayout=Fonds de Boîtes
         ///SAV_BoxList=Visualiseur de stockage
@@ -674,7 +685,7 @@ namespace PKHeX.WinForms.Properties {
         ///SAV_CGearSkin=Fonds C-Gear
         ///SAV_Database=Base de Données
         ///SAV_Encounters=Base de données
-        ///SAV_EventFlags=Évé [rest of string was truncated]&quot;;.
+        ///SAV_EventFlags=Événements dans le [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lang_fr {
             get {
@@ -692,7 +703,7 @@ namespace PKHeX.WinForms.Properties {
         ///MoveShopEditor=Editor Negozio Mosse
         ///RibbonEditor=Editor Fiocchi
         ///SAV_Apricorn=Editor Ghicocche
-        ///SAV_BerryField=Visualizzatore Campi di Bacche
+        ///SAV_BerryFieldXY=Visualizzatore Campi di Bacche
         ///SAV_BlockDump8=Dump Blocchi di Salvataggio
         ///SAV_BoxLayout=Editor Disposizione Box
         ///SAV_BoxList=Visualizzatore Storage
@@ -700,7 +711,7 @@ namespace PKHeX.WinForms.Properties {
         ///SAV_CGearSkin=C-Gear Skin
         ///SAV_Database=Database
         ///SAV_Encounters=Database
-        ///SAV_Ev [rest of string was truncated]&quot;;.
+        ///SAV_EventFlags=Editor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lang_it {
             get {
@@ -718,7 +729,7 @@ namespace PKHeX.WinForms.Properties {
         ///MoveShopEditor=Move Shop Editor
         ///RibbonEditor=取得リボン
         ///SAV_Apricorn=ぼんぐり
-        ///SAV_BerryField=きのみ畑
+        ///SAV_BerryFieldXY=きのみ畑
         ///SAV_BlockDump8=Savedata Block Dump
         ///SAV_BoxLayout=ボックスレイアウト
         ///SAV_BoxList=ボックスリスト
@@ -730,7 +741,8 @@ namespace PKHeX.WinForms.Properties {
         ///SAV_EventReset1=イベントリセット
         ///SAV_EventWork=Event Flag Editor
         ///SAV_FlagWork8b=Event Flag Editor
-        ///SAV_FolderList=フォル [rest of string was truncated]&quot;;.
+        ///SAV_FolderList=フォルダリスト
+        ///SAV_GameSelect [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lang_ja {
             get {
@@ -748,7 +760,7 @@ namespace PKHeX.WinForms.Properties {
         ///MoveShopEditor=Move Shop Editor
         ///RibbonEditor=리본 편집 도구
         ///SAV_Apricorn=규토리 편집 도구
-        ///SAV_BerryField=나무열매 밭 뷰어
+        ///SAV_BerryFieldXY=나무열매 밭 뷰어
         ///SAV_BlockDump8=세이브 데이터 블록 덤프
         ///SAV_BoxLayout=박스 레이아웃 편집 도구
         ///SAV_BoxList=소지 공간 뷰어
@@ -759,7 +771,8 @@ namespace PKHeX.WinForms.Properties {
         ///SAV_EventFlags=이벤트 플래그 편집 도구
         ///SAV_EventReset1=이벤트 초기화 도구
         ///SAV_EventWork=이벤트 플래그 편집 도구
-        ///SAV_FlagWork8b=Event Flag Editor [rest of string was truncated]&quot;;.
+        ///SAV_FlagWork8b=Event Flag Editor
+        ///SAV_FolderList=폴더 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lang_ko {
             get {
@@ -777,7 +790,7 @@ namespace PKHeX.WinForms.Properties {
         ///MoveShopEditor=招式商店编辑器
         ///RibbonEditor=奖章
         ///SAV_Apricorn=球果编辑
-        ///SAV_BerryField=树果田查看器
+        ///SAV_BerryFieldXY=树果田查看器
         ///SAV_BlockDump8=存档转储
         ///SAV_BoxLayout=盒子外观
         ///SAV_BoxList=寄放系统
@@ -794,7 +807,8 @@ namespace PKHeX.WinForms.Properties {
         ///SAV_HallOfFame=名人堂
         ///SAV_HallOfFame7=名人堂
         ///SAV_HoneyTree=甜甜蜜树编辑
-        ///SA [rest of string was truncated]&quot;;.
+        ///SAV_Inventory=物品栏
+        ///SAV_Link [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lang_zh {
             get {
@@ -812,7 +826,7 @@ namespace PKHeX.WinForms.Properties {
         ///MoveShopEditor=招式商店編輯器
         ///RibbonEditor=獎章
         ///SAV_Apricorn=球果編輯
-        ///SAV_BerryField=樹果田檢視器
+        ///SAV_BerryFieldXY=樹果田檢視器
         ///SAV_BlockDump8=存檔轉儲
         ///SAV_BoxLayout=盒子外觀
         ///SAV_BoxList=寄放系統
@@ -829,7 +843,8 @@ namespace PKHeX.WinForms.Properties {
         ///SAV_HallOfFame=名人堂
         ///SAV_HallOfFame7=名人堂
         ///SAV_HoneyTree=甜甜蜜樹編輯
-        /// [rest of string was truncated]&quot;;.
+        ///SAV_Inventory=物品欄
+        ///SAV_Li [rest of string was truncated]&quot;;.
         /// </summary>
         public static string lang_zh2 {
             get {
@@ -958,6 +973,22 @@ namespace PKHeX.WinForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PKHeX - By Kaphotics
+        ///http://projectpokemon.org/pkhex/
+        ///
+        ///23/06/03 - New Update:
+        /// - Added: HOME 3.0.0 initial support. Legality analysis is still under research. Thanks @Lusamine &amp; @sora10pls !
+        /// - - Lacks full support for cross-game transfers involving evolutions and moves. Please be patient, there&apos;s a lot of things to handle!
+        /// - Added: Tech Record editor GUI has been redesigned for a more visual experience. Can now sort alphabetically, owned, or move type.
+        /// - Added: Gen9 S/V clothing &quot;cheats&quot; have been added  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PKHeX_changelog {
+            get {
+                return ResourceManager.GetString("PKHeX_changelog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap qr {
@@ -1080,7 +1111,7 @@ namespace PKHeX.WinForms.Properties {
         ///CTRL-SHIFT-S: Open Settings
         ///
         ///Control + Click on...
-        ///- Species [rest of string was truncated]&quot;;.
+        ///- Species: Import Showdown/Smog [rest of string was truncated]&quot;;.
         /// </summary>
         public static string shortcuts {
             get {

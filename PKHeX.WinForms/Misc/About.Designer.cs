@@ -34,9 +34,12 @@ namespace PKHeX.WinForms
             RTB_Shortcuts = new System.Windows.Forms.RichTextBox();
             Tab_Changelog = new System.Windows.Forms.TabPage();
             RTB_Changelog = new System.Windows.Forms.RichTextBox();
+            Tab_PKHeX = new System.Windows.Forms.TabPage();
+            RTB_PKHeXChangelog = new System.Windows.Forms.RichTextBox();
             TC_About.SuspendLayout();
             Tab_Shortcuts.SuspendLayout();
             Tab_Changelog.SuspendLayout();
+            Tab_PKHeX.SuspendLayout();
             SuspendLayout();
             // 
             // L_Thanks
@@ -54,6 +57,7 @@ namespace PKHeX.WinForms
             // 
             TC_About.Controls.Add(Tab_Shortcuts);
             TC_About.Controls.Add(Tab_Changelog);
+            TC_About.Controls.Add(Tab_PKHeX);
             TC_About.Dock = System.Windows.Forms.DockStyle.Fill;
             TC_About.Location = new System.Drawing.Point(0, 0);
             TC_About.Margin = new System.Windows.Forms.Padding(0);
@@ -108,6 +112,27 @@ namespace PKHeX.WinForms
             RTB_Changelog.Text = "";
             RTB_Changelog.WordWrap = false;
             // 
+            // Tab_PKHeX
+            // 
+            Tab_PKHeX.Controls.Add(RTB_PKHeXChangelog);
+            Tab_PKHeX.Location = new System.Drawing.Point(4, 24);
+            Tab_PKHeX.Name = "Tab_PKHeX";
+            Tab_PKHeX.Padding = new System.Windows.Forms.Padding(3);
+            Tab_PKHeX.Size = new System.Drawing.Size(568, 401);
+            Tab_PKHeX.TabIndex = 2;
+            Tab_PKHeX.Text = "PKHeX";
+            Tab_PKHeX.UseVisualStyleBackColor = true;
+            // 
+            // RTB_PKHeXChangelog
+            // 
+            RTB_PKHeXChangelog.BackColor = System.Drawing.SystemColors.Control;
+            RTB_PKHeXChangelog.Location = new System.Drawing.Point(0, 0);
+            RTB_PKHeXChangelog.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            RTB_PKHeXChangelog.Name = "RTB_PKHeXChangelog";
+            RTB_PKHeXChangelog.Size = new System.Drawing.Size(568, 401);
+            RTB_PKHeXChangelog.TabIndex = 0;
+            RTB_PKHeXChangelog.Text = "";
+            // 
             // About
             // 
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -126,6 +151,7 @@ namespace PKHeX.WinForms
             TC_About.ResumeLayout(false);
             Tab_Shortcuts.ResumeLayout(false);
             Tab_Changelog.ResumeLayout(false);
+            Tab_PKHeX.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -136,5 +162,7 @@ namespace PKHeX.WinForms
         private System.Windows.Forms.RichTextBox RTB_Shortcuts;
         private System.Windows.Forms.TabPage Tab_Changelog;
         private System.Windows.Forms.RichTextBox RTB_Changelog;
+        private System.Windows.Forms.TabPage Tab_PKHeX;
+        private System.Windows.Forms.RichTextBox RTB_PKHeXChangelog;
     }
 }

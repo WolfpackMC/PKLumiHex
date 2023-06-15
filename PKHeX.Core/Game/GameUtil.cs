@@ -118,6 +118,7 @@ public static class GameUtil
         if (Gen7.Contains(game)) return 7;
         if (Gen7b.Contains(game)) return 7;
         if (Gen8.Contains(game)) return 8;
+        if (BDSPLUMI == game) return 8;
         if (Gen9.Contains(game)) return 9;
         return -1;
     }
@@ -146,7 +147,7 @@ public static class GameUtil
         }
         if (PLA == game) return Legal.MaxSpeciesID_8a;
         if (BDSP.Contains(game)) return Legal.MaxSpeciesID_8b;
-        if (BDSPLUMI == game) return (int)Species.MAX_COUNT - 1;
+        if (BDSPLUMI == game) return Legal.MaxSpeciesID_9;
         if (Gen8.Contains(game)) return Legal.MaxSpeciesID_8;
         if (Gen9.Contains(game)) return Legal.MaxSpeciesID_9;
         return 0;

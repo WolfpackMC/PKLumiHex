@@ -36,7 +36,7 @@ public partial class Main : Form
             WinFormsUtil.TranslateInterface(this, CurrentLanguage); // Translate the UI to language.
 #endif
         FormInitializeSecond();
-        //FormLoadCheckForUpdates();
+        FormLoadCheckForUpdates();
 
         var startup = new StartupArguments();
         startup.ReadArguments(args);
@@ -105,7 +105,7 @@ public partial class Main : Form
     private static readonly string TemplatePath = Path.Combine(WorkingDirectory, "template");
     private static readonly string TrainerPath = Path.Combine(WorkingDirectory, "trainers");
     private static readonly string PluginPath = Path.Combine(WorkingDirectory, "plugins");
-    private const string ThreadPath = "https://projectpokemon.org/pkhex/";
+    private const string ThreadPath = "https://github.com/TalonSabre/LumiHeX/releases/latest";
 
     public static readonly PKHeXSettings Settings = PKHeXSettings.GetSettings(ConfigPath);
 
@@ -213,9 +213,10 @@ public partial class Main : Form
 
     private void NotifyNewVersionAvailable(Version ver)
     {
-        var date = $"{2000 + ver.Major:00}{ver.Minor:00}{ver.Build:00}";
+        var lastnum = (ver.Build != -1) ? $".{ver.Build}" : "";
+        string version = $"{ver.Major}.{ver.Minor}{lastnum}";
         var lbl = L_UpdateAvailable;
-        lbl.Text = $"{MsgProgramUpdateAvailable} {date}";
+        lbl.Text = $"{MsgProgramUpdateAvailable} {version}";
         lbl.Click += (_, _) => Process.Start(new ProcessStartInfo(ThreadPath) { UseShellExecute = true });
         lbl.Visible = lbl.TabStop = lbl.Enabled = true;
     }
@@ -824,9 +825,10 @@ public partial class Main : Form
         string version = $"d-{date:yyyyMMdd}";
 #else
         var ver = Program.CurrentVersion;
-        string version = $"{2000+ver.Major:00}{ver.Minor:00}{ver.Build:00}";
+        var lastnum = (ver.Build != -1) ? $".{ver.Build}" : "";
+        string version = $"{ver.Major}.{ver.Minor}{lastnum}";
 #endif
-        return $"PKH{(HaX ? "a" : "e")}X ({version})";
+        return $"LumiH{(HaX ? "a" : "e")}X ({version})";
     }
 
     private static string GetProgramTitle(SaveFile sav)

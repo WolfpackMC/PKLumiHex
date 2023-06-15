@@ -1,0 +1,24 @@
+LumiHeX
+https://github.com/TalonSabre/LumiHeX/
+
+0.2.2
+- Reimplement Update Checker
+  - LumiHeX will let you know if an update is available!
+- Lumi items should appear on the hold items list now
+
+0.2.1
+- Fixed Batch Editor not changing box and party Pokemon
+
+0.2
+- Lumi saves can now read items added to Luminescent
+  - Things like the Everlasting Candy will not be removed from save
+  - Can also add/remove them from your bag if you want
+  - Will display gen 9 Pokemon again
+
+0.1.1
+- Lumi saves can now read national dex species data.
+  - gen 1-4 Pokemon load alongside gen 5-8 Pokemon
+    - certain features will only apply to gen 1-4 currently
+      - includes autofill data, and likely more legality qol features
+  - No longer will display gen 9 Pokemon
+- Artwork sprites load by default (to closer match custom lumi sprites)
