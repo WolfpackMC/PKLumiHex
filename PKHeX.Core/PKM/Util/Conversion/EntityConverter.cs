@@ -168,8 +168,6 @@ public static class EntityConverter
         PK6 { Species: (int)Species.Pikachu, Form: not 0 } => IncompatibleForm,
         PB7 { Species: (int)Species.Pikachu, Form: not 0 } => IncompatibleForm,
         PB7 { Species: (int)Species.Eevee, Form: not 0 } => IncompatibleForm,
-        PB8 { Species: (int)Species.Spinda } => IncompatibleSpecies, // Incorrect arrangement of spots (PID endianness)
-        PB8 { Species: (int)Species.Nincada } => IncompatibleSpecies, // Clone paranoia with Shedinja
         _ => Success,
     };
 
@@ -181,16 +179,7 @@ public static class EntityConverter
     /// <returns>Indication if Not Transferable</returns>
     private static EntityConverterResult CheckTransferInbound(PKM pk, Type destType)
     {
-        if (destType == typeof(PB8))
-        {
-            return pk.Species switch
-            {
-                (int)Species.Nincada => IncompatibleSpecies,
-                (int)Species.Spinda => IncompatibleSpecies,
-                _ => Success,
-            };
-        }
-
+    
         if (destType.Name[^1] == '1' && pk.Species > Legal.MaxSpeciesID_1)
             return IncompatibleSpecies;
 

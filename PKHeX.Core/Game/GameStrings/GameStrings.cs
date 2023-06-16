@@ -151,7 +151,7 @@ public sealed class GameStrings : IBasicStrings
         var met3 = Get($"{ident}_30000");
         var met4 = Get($"{ident}_40000");
         var met6 = Get($"{ident}_60000");
-        return new LocationSet6(met0,met3, met4, met6);
+        return new LocationSet6(met0, met3, met4, met6);
     }
 
     private LocationSet6 Get6(string ident, string[] met3, string[] met6)
@@ -515,8 +515,8 @@ public sealed class GameStrings : IBasicStrings
 
         set.Met4[81] += " (-)"; // Pokémon GO -- duplicate with 30000's entry
         set.Met4[86] += " (-)"; // Pokémon HOME -- duplicate with 30000's entry
-     // set.Met3[12] += " (-)"; // Pokémon GO -- duplicate with 40000's entry
-     // set.Met3[18] += " (-)"; // Pokémon HOME -- duplicate with 40000's entry
+                                // set.Met3[12] += " (-)"; // Pokémon GO -- duplicate with 40000's entry
+                                // set.Met3[18] += " (-)"; // Pokémon HOME -- duplicate with 40000's entry
     }
 
     private void SanitizeMetGen8b(LocationSet6 set)
@@ -544,8 +544,8 @@ public sealed class GameStrings : IBasicStrings
 
         set.Met4[81] += " (-)"; // Pokémon GO -- duplicate with 30000's entry
         set.Met4[86] += " (-)"; // Pokémon HOME -- duplicate with 30000's entry
-     // set.Met3[12] += " (-)"; // Pokémon GO -- duplicate with 40000's entry
-     // set.Met3[18] += " (-)"; // Pokémon HOME -- duplicate with 40000's entry
+                                // set.Met3[12] += " (-)"; // Pokémon GO -- duplicate with 40000's entry
+                                // set.Met3[18] += " (-)"; // Pokémon HOME -- duplicate with 40000's entry
 
         for (int i = 55; i <= 60; i++) // distinguish second set of YYYY Event from the first
             set.Met4[i] += " (-)";
@@ -611,8 +611,8 @@ public sealed class GameStrings : IBasicStrings
 
         set.Met4[73] += " (-)"; // Pokémon GO -- duplicate with 30000's entry
         set.Met4[78] += " (-)"; // Pokémon HOME -- duplicate with 30000's entry
-     // set.Met3[12] += " (-)"; // Pokémon GO -- duplicate with 40000's entry
-     // set.Met3[18] += " (-)"; // Pokémon HOME -- duplicate with 40000's entry
+                                // set.Met3[12] += " (-)"; // Pokémon GO -- duplicate with 40000's entry
+                                // set.Met3[18] += " (-)"; // Pokémon HOME -- duplicate with 40000's entry
     }
 
     private static void Deduplicate(string[] arr, int group)
@@ -640,8 +640,8 @@ public sealed class GameStrings : IBasicStrings
             var format = maxCounts[s] switch
             {
                 >= 100 => " ({0:000})",
-                >=  10 => " ({0:00})",
-                     _ => " ({0})",
+                >= 10 => " ({0:00})",
+                _ => " ({0})",
             };
             arr[i] += string.Format(format, count);
 #endif
@@ -659,7 +659,24 @@ public sealed class GameStrings : IBasicStrings
         _ => itemlist,
     };
 
-    public string[] GetLumiItemStrings() => (string[])lumiitems.Clone();
+    public string[] GetLumiItemStrings()
+    {
+        var clone = (string[])lumiitems.Clone();
+
+        for (int i = 420; i <= 427; i++)
+            clone[i] = $"TM{i - 420 + 93}";
+
+        clone[618] = "(-)"; // TM93
+        clone[619] = "(-)"; // TM94
+        clone[620] = "(-)"; // TM95
+        clone[690] = "(-)"; // TM96
+        clone[691] = "(-)"; // TM97
+        clone[692] = "(-)"; // TM98
+        clone[693] = "(-)"; // TM99
+        clone[694] = "(-)"; // TM100
+
+        return clone;
+    }
 
     private string[] GetItemStrings8b()
     {

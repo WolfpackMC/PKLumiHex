@@ -118,6 +118,7 @@ public sealed class MyItem8b : MyItem
         var info = ItemStorage8BDSP.Instance;
         var lumiinfo = ItemStorage8BDSPLumi.Instance;
         var max = info.GetMax(type);
-        return lumi ? new InventoryPouch8b(type, lumiinfo, max, Offset) : new InventoryPouch8b(type, info, max, Offset);
+        var lumimax = lumiinfo.GetMax(type);
+        return lumi ? new InventoryPouch8b(type, lumiinfo, lumimax, Offset) : new InventoryPouch8b(type, info, max, Offset);
     }
 }

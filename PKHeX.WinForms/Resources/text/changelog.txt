@@ -1,5 +1,11 @@
 LumiHeX
-https://github.com/TalonSabre/LumiHeX/
+https://github.com/TalonSabre/PKLumiHeX/
+
+0.2.3
+- Fixed Update Checker to use the new URL
+  - PKLumiHeX will let you know if an update is available! (For good this time)
+- Fix TMs Reading and Writing
+- Fix import, export and adding Nincada and Spinda to save file.
 
 0.2.2
 - Reimplement Update Checker

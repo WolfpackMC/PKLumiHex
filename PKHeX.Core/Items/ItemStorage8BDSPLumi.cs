@@ -142,6 +142,19 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         return ArrayUtil.ConcatAll(Pouch_Regular_Lumi, Pouch_Ball_Lumi, Pouch_Battle_Lumi, Pouch_Berries_Lumi, Pouch_TMHM_Lumi, Pouch_Medicine_Lumi, Pouch_Treasure_Lumi);
     }
 
+    public int GetMax(InventoryType type) => type switch
+    {
+        InventoryType.Items => 999,
+        InventoryType.KeyItems => 1,
+        InventoryType.TMHMs => 1,
+        InventoryType.Medicine => 999,
+        InventoryType.Berries => 999,
+        InventoryType.Balls => 999,
+        InventoryType.BattleItems => 999,
+        InventoryType.Treasure => 999,
+        _ => throw new ArgumentOutOfRangeException(nameof(type)),
+    };
+
     public static InventoryType GetInventoryPouch(ushort itemIndex)
     {
         foreach (var type in ValidTypes)
