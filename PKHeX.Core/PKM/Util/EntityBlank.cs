@@ -49,6 +49,7 @@ public static class EntityBlank
         1 when ver == GameVersion.BU => new PK1(true),
         7 when GameVersion.Gen7b.Contains(ver) => new PB7(),
         8 when GameVersion.BDSP.Contains(ver) => new PB8(),
+        8 when GameVersion.BDSPLUMI == ver => new PB8LUMI(),
         8 when GameVersion.PLA == ver => new PA8(),
         _ => GetBlank(gen),
     };

@@ -98,15 +98,15 @@ namespace PKHeX.Core
         public override int MaxEV => 252;
 
         public override int Generation => 8;
-        public override EntityContext Context => EntityContext.Gen8b;
+        public override EntityContext Context => EntityContext.Gen8bLumi;
         public override PersonalTable8BDSP Personal => PersonalTable.BDSPLUMI;
         public override int MaxStringLengthOT => 12;
         public override int MaxStringLengthNickname => 12;
         public override ushort MaxMoveID => Legal.MaxMoveID_8b;
-        public override ushort MaxSpeciesID => (ushort)Species.MAX_COUNT - 1;
+        public override ushort MaxSpeciesID => Legal.MaxSpeciesID_9;
         public override int MaxItemID => 1836;
         public override int MaxBallID => Legal.MaxBallID_8b;
-        public override int MaxGameID => Legal.MaxGameID_8b;
+        public override int MaxGameID => (int)GameVersion.RB - 1;
         public override int MaxAbilityID => Legal.MaxAbilityID_8b;
 
         public new int SaveRevision
@@ -170,8 +170,6 @@ namespace PKHeX.Core
         public new ContestPhotoLanguage8b ContestPhotoLanguage { get; }
         public new ZukanSpinda8b ZukanExtra { get; }
         public new UgCountRecord8b UgCount { get; }
-
-        public override GameVersion Version => GameVersion.BDSPLUMI;
 
         // First Savedata Expansion!
         public new RecordAddData8b RecordAdd { get; }

@@ -132,9 +132,10 @@ public static class EntityFormat
         FormatPB7 => new PB7(data),
         FormatPK8 => new PK8(data),
         FormatPA8 => new PA8(data),
-        FormatPB8 => new PB8(data),
+        FormatPB8 => prefer == EntityContext.Gen8bLumi ? new PB8LUMI(data) : new PB8(data),
         Format6or7 => prefer == EntityContext.Gen6 ? new PK6(data) : new PK7(data),
-        Format8or8b => prefer == EntityContext.Gen8b ? new PB8(data) : new PK8(data),
+        Format8or8b => prefer == EntityContext.Gen8b ? new PB8(data) : GetFromBytes(data, Format8orLumi, prefer),
+        Format8orLumi => prefer == EntityContext.Gen8bLumi ? new PB8LUMI(data) : new PK8(data),
         FormatPK9 => new PK9(data),
         _ => null,
     };
@@ -198,7 +199,7 @@ public static class EntityFormat
     private static EntityFormatDetected IsFormatReally8b(PK8 pk)
     {
         if (pk.Species > Legal.MaxSpeciesID_4)
-            return FormatPK8;
+            return Format8orLumi;
         if (pk.DynamaxLevel != 0)
             return FormatPK8;
         if (pk.CanGigantamax)
@@ -221,5 +222,5 @@ public enum EntityFormatDetected
     FormatPK9,
 
     Format6or7,
-    Format8or8b,
+    Format8or8b, Format8orLumi,
 }

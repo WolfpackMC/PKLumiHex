@@ -28,6 +28,7 @@ public enum EntityContext : byte
     Gen7b,
     Gen8a,
     Gen8b,
+    Gen8bLumi,
 
     MaxInvalid,
 }
@@ -39,6 +40,7 @@ public static class EntityContextExtensions
         Gen7b => 7,
         Gen8a => 8,
         Gen8b => 8,
+        Gen8bLumi => 8,
         _ => throw new ArgumentOutOfRangeException(nameof(value), value, null),
     };
 
@@ -59,6 +61,7 @@ public static class EntityContextExtensions
         Gen7b => GameVersion.GP,
         Gen8a => GameVersion.PLA,
         Gen8b => GameVersion.BD,
+        Gen8bLumi => GameVersion.BDSPLUMI,
 
         _ => throw new ArgumentOutOfRangeException(nameof(value), value, null),
     };
@@ -68,6 +71,7 @@ public static class EntityContextExtensions
         GameVersion.GP or GameVersion.GE => Gen7b,
         GameVersion.PLA => Gen8a,
         GameVersion.BD or GameVersion.SP => Gen8b,
+        GameVersion.BDSPLUMI => Gen8bLumi,
         _ => (EntityContext)version.GetGeneration(),
     };
 }

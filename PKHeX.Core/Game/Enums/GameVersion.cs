@@ -229,6 +229,11 @@ public enum GameVersion : byte
     /// Pokémon Violet (NX)
     /// </summary>
     VL = 51,
+
+    /// <summary>
+    /// Pokémon Brilliant Diamond &amp; Shining Pearl - Luminescent ROM Hack
+    /// </summary>
+    BDSPLUMI,
     #endregion
 
     // The following values are not actually stored values in pk data,
@@ -415,14 +420,6 @@ public enum GameVersion : byte
     BDSP,
 
     /// <summary>
-    /// Pokémon Brilliant Diamond &amp; Shining Pearl - Luminescent ROM Hack
-    /// </summary>
-    /// <remarks>Used to lump data from the associated games as data assets are shared.</remarks>
-    /// <see cref="BD"/>
-    /// <see cref="SP"/>
-    BDSPLUMI,
-
-    /// <summary>
     /// Pokémon Scarlet &amp; Violet
     /// </summary>
     /// <remarks>Used to lump data from the associated games as data assets are shared.</remarks>
@@ -489,6 +486,7 @@ public enum GameVersion : byte
     /// </summary>
     /// <see cref="SWSH"/>
     /// <see cref="BDSP"/>
+    /// <see cref="BDSPLUMI"/>
     /// <see cref="PLA"/>
     Gen8,
 

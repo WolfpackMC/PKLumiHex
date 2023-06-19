@@ -146,8 +146,8 @@ public static class GameUtil
             return Legal.MaxSpeciesID_7_USUM;
         }
         if (PLA == game) return Legal.MaxSpeciesID_8a;
-        if (BDSP.Contains(game)) return Legal.MaxSpeciesID_8b;
         if (BDSPLUMI == game) return Legal.MaxSpeciesID_9;
+        if (BDSP.Contains(game)) return Legal.MaxSpeciesID_8b;
         if (Gen8.Contains(game)) return Legal.MaxSpeciesID_8;
         if (Gen9.Contains(game)) return Legal.MaxSpeciesID_9;
         return 0;
@@ -210,7 +210,7 @@ public static class GameUtil
 
             SWSH => g2 is SW or SH,
             BDSP => g2 is BD or SP,
-            Gen8 => SWSH.Contains(g2) || BDSP.Contains(g2) || PLA == g2,
+            Gen8 => SWSH.Contains(g2) || BDSP.Contains(g2) || BDSPLUMI == g2 || PLA == g2,
 
             SV => g2 is SL or VL,
             Gen9 => SV.Contains(g2),

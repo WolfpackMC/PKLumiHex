@@ -228,7 +228,7 @@ public sealed class MetDataSource
             result = GetLocationListInternal(version, context);
 
         // Insert the BDSP none location if the format requires it.
-        if (context is EntityContext.Gen8b && !BDSP.Contains(version))
+        if ((context is EntityContext.Gen8b or EntityContext.Gen8bLumi) && !BDSP.Contains(version))
         {
             var list = new List<ComboItem>(result.Count + 1);
             list.AddRange(result);
@@ -261,7 +261,7 @@ public sealed class MetDataSource
                 or GD or SI or C => Partition2(MetGen7, IsMetLocation7USUM),
             GP or GE or GO => Partition2(MetGen7GG, IsMetLocation7GG),
             SW or SH => Partition2(MetGen8, IsMetLocation8SWSH),
-            BD or SP => Partition2(MetGen8b, IsMetLocation8BDSP),
+            BD or SP or BDSPLUMI => Partition2(MetGen8b, IsMetLocation8BDSP),
             PLA => Partition2(MetGen8a, IsMetLocation8LA),
             SL or VL => Partition2(MetGen9, IsMetLocation9SV),
             _ => new List<ComboItem>(GetLocationListModified(version, context)),

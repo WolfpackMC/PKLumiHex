@@ -655,6 +655,7 @@ public sealed class GameStrings : IBasicStrings
         EntityContext.Gen3 => GetItemStrings3(game),
         EntityContext.Gen4 => g4items, // mail names changed 4->5
         EntityContext.Gen8b => GetItemStrings8b(),
+        EntityContext.Gen8bLumi => GetLumiItemStrings(),
         EntityContext.Gen9 => GetItemStrings9(),
         _ => itemlist,
     };
@@ -789,6 +790,7 @@ public sealed class GameStrings : IBasicStrings
 
         8 when version is GameVersion.PLA => Gen8,
         8 when GameVersion.BDSP.Contains(version) => Gen8b,
+        8 when GameVersion.BDSPLUMI == version => Gen8b,
         8 => Gen8,
         9 => Gen9,
 

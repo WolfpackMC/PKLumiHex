@@ -281,6 +281,7 @@ public abstract class PKM : ISpeciesForm, ITrainerID32, IGeneration, IShiny, ILa
     public bool LGPE => Version is (int)GP or (int)GE;
     public bool SWSH => Version is (int)SW or (int)SH;
     public virtual bool BDSP => Version is (int)BD or (int)SP;
+    public virtual bool BDSPLumi => Version is (int)BDSPLUMI;
     public virtual bool LA => Version is (int)PLA;
     public virtual bool SV => Version is (int)SL or (int)VL;
 
@@ -289,7 +290,7 @@ public abstract class PKM : ISpeciesForm, ITrainerID32, IGeneration, IShiny, ILa
     public bool VC => VC1 || VC2;
     public bool GG => LGPE || GO_LGPE;
     public bool Gen9 => SV;
-    public bool Gen8 => Version is >= 44 and <= 49 || GO_HOME;
+    public bool Gen8 => Version is >= 44 and <= 49 || BDSPLumi || GO_HOME;
     public bool Gen7 => Version is >= 30 and <= 33 || GG;
     public bool Gen6 => Version is >= 24 and <= 29;
     public bool Gen5 => Version is >= 20 and <= 23;

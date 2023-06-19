@@ -42,6 +42,7 @@ public static class MoveInfo
         Gen7b => MoveInfo7b.MovePP_GG,
         Gen8a => MoveInfo8a.MovePP_LA,
         Gen8b => MoveInfo8.MovePP_SWSH,
+        Gen8bLumi => MoveInfo8.MovePP_SWSH,
         _ => throw new ArgumentOutOfRangeException(nameof(context)),
     };
 
@@ -164,6 +165,7 @@ public static class MoveInfo
         Gen8 => Legal.MaxMoveID_8a,
         Gen8a => Legal.MaxMoveID_8a,
         Gen8b => Legal.MaxMoveID_8b,
+        Gen8bLumi => Legal.MaxMoveID_8b,
         Gen9 => Legal.MaxMoveID_9,
         _ => -1,
     };

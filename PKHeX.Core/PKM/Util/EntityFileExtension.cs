@@ -39,6 +39,8 @@ public static class EntityFileExtension
         if (maxGeneration >= 8)
             result.Add(ExtensionPB8); // Brilliant Diamond & Shining Pearl
         if (maxGeneration >= 8)
+            result.Add("pb8lumi"); // Luminescent Platinum
+        if (maxGeneration >= 8)
             result.Add(ExtensionPA8); // Legends: Arceus
 
         return result.ToArray();
@@ -56,7 +58,8 @@ public static class EntityFileExtension
             return prefer;
 
         static bool Is(ReadOnlySpan<char> ext, ReadOnlySpan<char> str) => ext.EndsWith(str, StringComparison.InvariantCultureIgnoreCase);
-        if (Is(ext, "b8") || Is(ext, "lumi")) return EntityContext.Gen8b;
+        if (Is(ext, "b8")) return EntityContext.Gen8b;
+        if (Is(ext, "lumi")) return EntityContext.Gen8bLumi;
         if (Is(ext, "k8")) return EntityContext.Gen8;
         if (Is(ext, "b7")) return EntityContext.Gen7b;
         if (Is(ext, "k7")) return EntityContext.Gen7;
