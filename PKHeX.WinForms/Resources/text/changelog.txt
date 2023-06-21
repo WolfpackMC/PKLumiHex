@@ -1,6 +1,15 @@
 LumiHeX
 https://github.com/TalonSabre/PKLumiHeX/
 
+0.3.1
+- PKLumiHeX can now read/write PLA moves on Lumi saves
+
+0.3
+- PokeDex Editor has been restored!
+  - If you have used a previous version of PKLumiHeX, you may have noticed your Pokedex looked wrong in game.
+    - Unfortunately, this will not fix by itself, you will need to manually set the relevent flags in PKLumiHeX.
+    - Fortunately, you can either clear the entire dex or fully complete it as seen below
+
 0.2.3
 - Fixed Update Checker to use the new URL
   - PKLumiHeX will let you know if an update is available! (For good this time)
