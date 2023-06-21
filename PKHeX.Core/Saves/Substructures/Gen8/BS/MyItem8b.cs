@@ -15,10 +15,7 @@ public sealed class MyItem8b : MyItem
     public MyItem8b(SAV8BS sav, int offset) : base(sav)
     {
         Offset = offset;
-        if (sav is SAV8BSLuminescent)
-            lumi = true;
-        else
-            lumi = false;
+        lumi = sav is SAV8BSLuminescent ? true : false;
     }
 
     public int GetItemQuantity(ushort itemIndex)

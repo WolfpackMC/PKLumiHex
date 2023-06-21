@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using static System.Buffers.Binary.BinaryPrimitives;
 
 namespace PKHeX.Core
@@ -25,7 +24,7 @@ namespace PKHeX.Core
             Played = new PlayTime8b(this, 0x79C04); // size: 0x04
             Contest = new Contest8b(this, 0x79C08); // size: 0x720
 
-            Zukan = (SaveRevision & 0x0100) == 0x0100 ? new Zukan8bLumi(this, 0x7A328) : new Zukan8b(this, 0x7A328); // size: 0x30B8
+            Zukan = new Zukan8bLumi(this, 0x7A328); // size: 0x30B8
             BattleTrainer = new BattleTrainerStatus8bLumi(this, 0x7D3E0); // size: 0x1618
             MenuSelection = new MenuSelect8b(this, 0x7E9F8); // size: 0x44
             FieldObjects = new FieldObjectSave8b(this, 0x7EA3C); // size: 0x109A0 (1000 * 0x44)
@@ -148,7 +147,7 @@ namespace PKHeX.Core
         public new PlayTime8b Played { get; }
         public new Contest8b Contest { get; }
         // public Misc8 Misc { get; }
-        public new Zukan8b Zukan { get; }
+        public new Zukan8bLumi Zukan { get; }
         public new BattleTrainerStatus8bLumi BattleTrainer { get; }
         public new MenuSelect8b MenuSelection { get; }
         public new FieldObjectSave8b FieldObjects { get; }
