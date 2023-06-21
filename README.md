@@ -2,10 +2,10 @@ PKLumiHeX
 ==
 ## Download: [Latest Release](https://github.com/TalonSabre/PKLumiHex/releases/latest)
 ### Fork of [PKHeX](https://github.com/kwsch/PKHeX) with added support for Luminescent Platinum!
-### Currently, it is a Work in progress. As such, some features will not work when editing a Luminescent Platinum save.
+### PKLumiHeX is a Work in progress. Some features will not work when editing a Luminescent Platinum save.
 ##
 
-## Features working on Luminescent Platinum saves
+### Features working on Luminescent Platinum saves
 - Pokémon Editor (Box and Party)
   - Stat and Ability changes will display
   - New Pokémon Luminescent forms included!
@@ -15,24 +15,44 @@ PKLumiHeX
   - Luminescent-specific items will show
 - Box Layout Editor
 - Seal Stickers Editor
+- Pokédex Editor
 
-## Unconfirmed if working
+### Unconfirmed if working
 - Poffin Editor
 - Trainer Info Editor
   - Specifically Gender, Version, Language, Adventure Info, and Stats
-    - Luminescent only supports Brilliant Diamond Version, and the English Language!
+    - Luminescent Platinum only supports Brilliant Diamond Version, and the English Language for now!
 - Underground (Bag) Editor
 
-## Unimplemented features
+### Unimplemented features
 - Event Flags Editor
   - Does not contain new flags
-- Pokédex Editor
-  - Crashes upon load
 
 ### Known 'Issues'
-- Shiny Pokémon display as the default pixel art sprites
+- Shiny Pokémon and certain forms display as the default pixel art sprites
 - Sprites for Luminescent forms do not change regardless of shinyness or sprite preference
     - The shiny symbol *will* still display on the top left, though.
+- Some moves will display an incorrect amount of PP
+
+##
+<h1 align=center>Screenshots</h1>
+<div align=center>
+    <p align=center>
+        <img src="https://i.imgur.com/UoyTq53.png" width="47.5%">
+        <img src="https://i.imgur.com/wYu3RFK.png" width="47.5%" padding-right=5>
+    </p>
+    <p>
+        <img align=center src="https://i.imgur.com/8wgwPlS.png" width="47.5%">
+        <img align=center src="https://i.imgur.com/311Nlkd.png" width="47.5%">
+    </p>
+    <div align=center>
+        <p>
+            <img src="https://i.imgur.com/gGJ0PFK.png" width="22.635%">
+            <img src="https://i.imgur.com/t0HF7f3.png" width="22.5%">
+            <img src="https://i.imgur.com/xpkJb0l.png" width="45.11%">
+        </p>
+    </div>
+</div>
 
 -----
 # PKHeX
