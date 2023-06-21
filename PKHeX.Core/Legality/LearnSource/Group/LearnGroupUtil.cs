@@ -25,6 +25,7 @@ public static class LearnGroupUtil
         Gen7b => LearnGroup7b.Instance,
         Gen8a => LearnGroup8a.Instance,
         Gen8b => LearnGroup8b.Instance,
+        Gen8bLumi => LearnGroup8b.Instance,
 
         _ => throw new ArgumentOutOfRangeException(nameof(context), context, null),
     };

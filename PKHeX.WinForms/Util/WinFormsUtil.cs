@@ -433,6 +433,7 @@ public static class WinFormsUtil
         EntityContext.Gen7b => "Beluga Gift Record|*.wr7" + all,
         EntityContext.Gen8b => "BD/SP Gift|*.wb8" + all,
         EntityContext.Gen8a => "Legends: Arceus Gift|*.wa8" + all,
+        EntityContext.Gen8bLumi => "BD/SP Gift|*.wb8" + all,
         _ => string.Empty,
     };
 

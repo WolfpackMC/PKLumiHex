@@ -51,6 +51,7 @@ public sealed class EvolutionTree
         EntityContext.Gen7b => Evolves7b,
         EntityContext.Gen8a => Evolves8a,
         EntityContext.Gen8b => Evolves8b,
+        EntityContext.Gen8bLumi => Evolves8b,
         _ => throw new ArgumentOutOfRangeException(nameof(context), context, null),
     };
 

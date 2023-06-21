@@ -149,6 +149,7 @@ public static partial class Extensions
     {
         EntityContext.Gen7 or EntityContext.Gen8 or EntityContext.Gen8b => 100,
         EntityContext.Gen9 => 50,
+        EntityContext.Gen8bLumi => 1,
         _ => 101,
     };
 
@@ -168,6 +169,9 @@ public static partial class Extensions
 
         if (h.HasVisitedGen9)
             return 50;
+
+        if (current == EntityContext.Gen8bLumi)
+            return 1;
         return 100;
     }
 

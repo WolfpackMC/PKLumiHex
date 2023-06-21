@@ -52,6 +52,7 @@ public sealed class EvolutionHistory
         if (context == EntityContext.Gen7b) return ref Gen7b;
         if (context == EntityContext.Gen8a) return ref Gen8a;
         if (context == EntityContext.Gen8b) return ref Gen8b;
+        if (context == EntityContext.Gen8bLumi) return ref Gen8b;
 
         throw new ArgumentOutOfRangeException(nameof(context));
     }

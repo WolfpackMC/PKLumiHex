@@ -122,6 +122,7 @@ public sealed class BallVerifier : Verifier
         EntityContext.Gen7 => VerifyBallEggGen7(data), // Gen7 Inheritance Rules
         EntityContext.Gen8 => VerifyBallEggGen8(data),
         EntityContext.Gen8b => VerifyBallEggGen8BDSP(data),
+        EntityContext.Gen8bLumi => VerifyBallEggGen8BDSP(data),
         EntityContext.Gen9 => VerifyBallEggGen9(data),
         _ => NONE,
     };

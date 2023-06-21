@@ -271,6 +271,7 @@ public sealed class HistoryVerifier : Verifier
         EntityContext.Gen8  => PersonalTable.SWSH.GetFormEntry(species, form).BaseFriendship,
         EntityContext.Gen8a => PersonalTable.LA.GetFormEntry(species, form).BaseFriendship,
         EntityContext.Gen8b => PersonalTable.BDSP.GetFormEntry(species, form).BaseFriendship,
+        EntityContext.Gen8bLumi => PersonalTable.BDSP.GetFormEntry(species, form).BaseFriendship,
         EntityContext.Gen9  => PersonalTable.SV.GetFormEntry(species, form).BaseFriendship,
         _ => throw new ArgumentOutOfRangeException(nameof(context)),
     };

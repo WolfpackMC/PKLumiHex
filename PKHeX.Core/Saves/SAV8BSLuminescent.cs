@@ -101,7 +101,7 @@ namespace PKHeX.Core
         public override PersonalTable8BDSP Personal => PersonalTable.BDSPLUMI;
         public override int MaxStringLengthOT => 12;
         public override int MaxStringLengthNickname => 12;
-        public override ushort MaxMoveID => Legal.MaxMoveID_8b;
+        public override ushort MaxMoveID => Legal.MaxMoveID_8a;
         public override ushort MaxSpeciesID => Legal.MaxSpeciesID_9;
         public override int MaxItemID => 1836;
         public override int MaxBallID => Legal.MaxBallID_8b;

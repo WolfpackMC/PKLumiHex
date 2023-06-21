@@ -31,6 +31,7 @@ public static class EvolutionGroupUtil
         Gen7b => EvolutionGroup7b.Instance,
         Gen8a => EvolutionGroup8.Instance,
         Gen8b => EvolutionGroup8.Instance,
+        Gen8bLumi => EvolutionGroup8.Instance,
 
         _ => throw new ArgumentOutOfRangeException(nameof(context), context, null),
     };

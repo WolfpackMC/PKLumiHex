@@ -38,6 +38,7 @@ public static class Memories
         EntityContext.Gen7 => EntityContext.Gen6,
         EntityContext.Gen8a => EntityContext.Gen8,
         EntityContext.Gen8b => EntityContext.Gen8,
+        EntityContext.Gen8bLumi => EntityContext.Gen8,
         _ => current,
     };
 

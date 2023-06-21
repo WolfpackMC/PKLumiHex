@@ -93,27 +93,6 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         420, 421, 422, 423, 424, 425, 426, 427,
     };
 
-    internal static ReadOnlySpan<ushort> Unreleased => new ushort[]
-    {
-        005, // Safari Ball
-        016, // Cherish Ball
-        044, // Sacred Ash
-        499, // Sport Ball
-        500, // Park Ball
-        537, // Prism Scale
-        565, // Health Feather
-        566, // Muscle Feather
-        567, // Resist Feather
-        568, // Genius Feather
-        569, // Clever Feather
-        570, // Swift Feather
-        576, // Dream Ball
-        849, // Ice Stone
-        851, // Beast Ball
-
-        1835 // Infinite Repel (Lumi)
-    };
-
     public ReadOnlySpan<ushort> GetItems(InventoryType type) => GetLegal(type);
 
     public static ReadOnlySpan<ushort> GetLegal(InventoryType type) => type switch
@@ -171,6 +150,6 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         if (type is InventoryType.KeyItems)
             return true;
 
-        return Unreleased.BinarySearch((ushort)itemIndex) < 0;
+        return ItemStorage8BDSP.Unreleased.BinarySearch((ushort)itemIndex) < 0;
     }
 }
