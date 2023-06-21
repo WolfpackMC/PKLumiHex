@@ -1,56 +1,89 @@
-PKLumiHeX
-==
-## Download: [Latest Release](https://github.com/TalonSabre/PKLumiHex/releases/latest)
-### Fork of [PKHeX](https://github.com/kwsch/PKHeX) with added support for Luminescent Platinum!
-### PKLumiHeX is a Work in progress. Some features will not work when editing a Luminescent Platinum save.
-##
-
-### Features working on Luminescent Platinum saves
-- Pokémon Editor (Box and Party)
-  - Stat and Ability changes will display
-  - New Pokémon Luminescent forms included!
-  - Individual Pokémon can be imported (\*.pb8, \*.pb8lumi) and exported (\*.pb8lumi)
-  - Can still use Save Box Data++
-- Bag Editor
-  - Luminescent-specific items will show
-- Box Layout Editor
-- Seal Stickers Editor
-- Pokédex Editor
-
-### Unconfirmed if working
-- Poffin Editor
-- Trainer Info Editor
-  - Specifically Gender, Version, Language, Adventure Info, and Stats
-    - Luminescent Platinum only supports Brilliant Diamond Version, and the English Language for now!
-- Underground (Bag) Editor
-
-### Unimplemented features
-- Event Flags Editor
-  - Does not contain new flags
-
-### Known 'Issues'
-- Shiny Pokémon and certain forms display as the default pixel art sprites
-- Sprites for Luminescent forms do not change regardless of shinyness or sprite preference
-    - The shiny symbol *will* still display on the top left, though.
-- Some moves will display an incorrect amount of PP
-
-##
-<h1 align=center>Screenshots</h1>
 <div align=center>
-    <p align=center>
-        <img src="https://i.imgur.com/UoyTq53.png" width="47.5%">
-        <img src="https://i.imgur.com/wYu3RFK.png" width="47.5%" padding-right=5>
-    </p>
-    <p>
-        <img align=center src="https://i.imgur.com/8wgwPlS.png" width="47.5%">
-        <img align=center src="https://i.imgur.com/311Nlkd.png" width="47.5%">
-    </p>
+    <h1>PKLumiHeX<br>
+        <h2>Download:
+            <a href="https://github.com/TalonSabre/PKLumiHex/releases/latest">Latest Release</a>
+        </h2>
+    </h1>
+</div>
+<div>
+    <h3 align=center>
+        Fork of
+        <a href="https://github.com/kwsch/PKHeX">PKHeX</a>
+        with added support for Luminescent Platinum!
+    </h3> 
+    <p align=center>PKLumiHeX is a Work in progress. Some features will not work correctly when editing a Luminescent Platinum save.</p>
+</div>
+
+##
+
+<div>
+    <h3 align=left>Features working on Luminescent Platinum saves</h3>
+    <ul>
+        <li><h4>Pokémon Editor</h4></li>
+        <ul>
+            <li>Luminescent Platinum's Stat and Ability changes will display</li>
+            <ul><li>Custom Pokémon forms included!</li></ul>
+            <li>Individual Pokémon can be imported (*.pb8, *.pb8lumi) and exported (*.pb8lumi)</li>
+            <ul><li>Includes box importing and exporting (*.bin)</li></ul>
+        </ul>
+        <li><h4>Bag Editor</h4></li>
+        <ul><li>New items added to Luminescent Platinum included!</li></ul>
+        <li><h4>Pokédex Editor</h4></li>
+        <ul>
+            <li>Allows setting seen and caught data</li>
+            <ul><li>Luminescent Platinum has significantly shrunk dex data. Setting one form sets all.</li></ul>
+        </ul>
+        <li><h5>Box Layout Editor</h5></li>
+        <li><h5>Seal Stickers Editor</h5></li>
+    </ul>
+</div>
+<div>
+    <h3 align=left>Features untested on Luminescent Platinum saves</h3>
+    <ul>
+        <li><h4>Trainer Info Editor</h4></li>
+        <ul>
+            <li>Specifically Gender, Version, Language, Adventure Info, and Stats</li>
+            <ul><li>Luminescent Platinum only supports Brilliant Diamond Version, and the English Language for now!</li></ul>
+        </ul>
+        <li><h5>Underground Bag Editor</h5></li>
+        <li><h5>Poffin Editor</h5></li>
+    </ul>
+</div>
+<div>
+    <h3 align=left>Unimplemented Features</h3>
+    <ul>
+        <li><h4>Event Flags Editor</h4></li>
+        <ul><li>Does not contain new flags</li></ul>
+    </ul>
+</div>
+<div>
+    <h3 align=left>Known 'Issues'</h3>
+    <ul>
+        <li><h4>Shiny Pokémon and certain forms display as the default pixel art sprites</h4></li>
+        <ul><li>Unfortunately, we do not have them in a style similar to what custom forms have</li></ul>
+        <li><h4>Sprites for Luminescent forms do not change regardless of shinyness or sprite preference</h4></li>
+        <ul><li>Same issue as above, but the shiny symbol <em>will</em> display</li></ul>
+        <li><h4>Some moves do not use the correct amount of PP</h4></li>
+    </ul>
+</div>
+<div>
+    <h1 align=center>Screenshots</h1>
     <div align=center>
-        <p>
-            <img src="https://i.imgur.com/gGJ0PFK.png" width="22.635%">
-            <img src="https://i.imgur.com/t0HF7f3.png" width="22.5%">
-            <img src="https://i.imgur.com/xpkJb0l.png" width="45.11%">
+        <p align=center>
+            <img src="https://i.imgur.com/UoyTq53.png" width="47.5%">
+            <img src="https://i.imgur.com/wYu3RFK.png" width="47.5%" padding-right=5>
         </p>
+        <p>
+            <img align=center src="https://i.imgur.com/8wgwPlS.png" width="47.5%">
+            <img align=center src="https://i.imgur.com/311Nlkd.png" width="47.5%">
+        </p>
+        <div align=center>
+            <p>
+                <img src="https://i.imgur.com/gGJ0PFK.png" width="22.635%">
+                <img src="https://i.imgur.com/t0HF7f3.png" width="22.5%">
+                <img src="https://i.imgur.com/xpkJb0l.png" width="45.11%">
+            </p>
+        </div>
     </div>
 </div>
 
