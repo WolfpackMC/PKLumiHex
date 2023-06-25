@@ -35,16 +35,16 @@
         </ul>
         <li><h5>Box Layout Editor</h5></li>
         <li><h5>Seal Stickers Editor</h5></li>
+        <li><h4>Trainer Info Editor</h4></li>
+        <ul>
+            <ul><li>Luminescent Platinum only supports Brilliant Diamond Version, and the English Language for now!</li></ul>
+            <ul><li>If you started your game in a language besides English, you can change it with this editor.</li></ul>
+        </ul>
     </ul>
 </div>
 <div>
     <h3 align=left>Features untested on Luminescent Platinum saves</h3>
     <ul>
-        <li><h4>Trainer Info Editor</h4></li>
-        <ul>
-            <li>Specifically Gender, Version, Language, Adventure Info, and Stats</li>
-            <ul><li>Luminescent Platinum only supports Brilliant Diamond Version, and the English Language for now!</li></ul>
-        </ul>
         <li><h5>Underground Bag Editor</h5></li>
         <li><h5>Poffin Editor</h5></li>
     </ul>
@@ -54,6 +54,8 @@
     <ul>
         <li><h4>Event Flags Editor</h4></li>
         <ul><li>Does not contain new flags</li></ul>
+        <li><h4>Block Data Editor</h4></li>
+        <ul><li>Causes a Crash</li></ul>
     </ul>
 </div>
 <div>
@@ -63,7 +65,6 @@
         <ul><li>Unfortunately, we do not have them in a style similar to what custom forms have</li></ul>
         <li><h4>Sprites for Luminescent forms do not change regardless of shinyness or sprite preference</h4></li>
         <ul><li>Same issue as above, but the shiny symbol <em>will</em> display</li></ul>
-        <li><h4>Some moves do not use the correct amount of PP</h4></li>
     </ul>
 </div>
 <div>
@@ -71,17 +72,17 @@
     <div align=center>
         <p align=center>
             <img src="https://i.imgur.com/UoyTq53.png" width="47.5%">
-            <img src="https://i.imgur.com/wYu3RFK.png" width="47.5%" padding-right=5>
+            <img src="https://i.imgur.com/311Nlkd.png" width="47.5%">
         </p>
         <p>
+            <img align=center src="https://i.imgur.com/wYu3RFK.png" width="47.5%">
             <img align=center src="https://i.imgur.com/8wgwPlS.png" width="47.5%">
-            <img align=center src="https://i.imgur.com/311Nlkd.png" width="47.5%">
         </p>
         <div align=center>
             <p>
                 <img src="https://i.imgur.com/gGJ0PFK.png" width="22.635%">
                 <img src="https://i.imgur.com/t0HF7f3.png" width="22.5%">
-                <img src="https://i.imgur.com/xpkJb0l.png" width="45.11%">
+                <img src="https://i.imgur.com/HklgScH.png" width="48.5%">
             </p>
         </div>
     </div>
