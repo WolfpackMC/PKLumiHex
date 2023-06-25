@@ -229,7 +229,7 @@ public class Zukan8b : ZukanBase<SAV8BS>
         WriteInt32LittleEndian(SAV.Data.AsSpan(PokeDex + offset), value);
     }
 
-    protected static int GetLanguageBit(int language)
+    public static int GetLanguageBit(int language)
     {
         if (language is 0 or (int)LanguageID.UNUSED_6 or > (int)LanguageID.ChineseT)
             return -1;

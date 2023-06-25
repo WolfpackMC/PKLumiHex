@@ -117,7 +117,7 @@ public static class Locations
     {
         4 => LinkTrade4,
         5 => LinkTrade5,
-        8 when GameVersion.BDSP.Contains(ver) => LinkTrade6NPC,
+        8 when ver is GameVersion.BDSPLUMI || GameVersion.BDSP.Contains(ver) => LinkTrade6NPC,
         _ => LinkTrade6,
     };
 
@@ -152,7 +152,7 @@ public static class Locations
         1 or 2 or 3 => 0,
         4 => Daycare4,
         5 => Daycare5,
-        8 when version is GameVersion.BD or GameVersion.SP => Daycare8b,
+        8 when version is GameVersion.BDSPLUMI or GameVersion.BD or GameVersion.SP => Daycare8b,
         9 => Picnic9,
         _ => Daycare5,
     };

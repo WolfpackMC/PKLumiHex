@@ -277,7 +277,7 @@ public partial class PKMEditor
     private void LoadMisc4(PKM pk)
     {
         CAL_MetDate.Value = pk.MetDate?.ToDateTime(new TimeOnly()) ?? new(2000, 1, 1);
-        if (!EncounterStateUtil.IsMetAsEgg(pk))
+        if (!(pk.Egg_Day != 0))
         {
             CHK_AsEgg.Checked = GB_EggConditions.Enabled = false;
             CAL_EggDate.Value = new DateTime(2000, 01, 01);

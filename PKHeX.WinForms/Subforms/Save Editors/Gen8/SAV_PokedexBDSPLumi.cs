@@ -50,6 +50,7 @@ public partial class SAV_PokedexBDSPLumi : Form
         LB_Species.TopIndex = LB_Species.SelectedIndex;
         GetEntry();
         editing = false;
+        B_ModifyForms.Enabled = mnuMFAllLang.Enabled = !(species > 493);
     }
 
     private void ChangeLBSpecies(object sender, EventArgs e)
@@ -62,6 +63,7 @@ public partial class SAV_PokedexBDSPLumi : Form
         CB_Species.SelectedValue = species;
         GetEntry();
         editing = false;
+        B_ModifyForms.Enabled = mnuMFAllLang.Enabled = !(species > 493);
     }
 
     private void GetEntry()
@@ -91,7 +93,7 @@ public partial class SAV_PokedexBDSPLumi : Form
         var f2 = CLB_FormShiny;
         f1.Items.Clear();
         f2.Items.Clear();
-        var fc = Zukan8bLumi.GetFormCount(species);
+        var fc = Zukan8b.GetFormCount(species);
         if (fc <= 0)
             return;
 
@@ -123,12 +125,10 @@ public partial class SAV_PokedexBDSPLumi : Form
         Zukan.SetLanguageFlag(species, (int)LanguageID.ChineseS, CHK_LangCHS.Checked);
         Zukan.SetLanguageFlag(species, (int)LanguageID.ChineseT, CHK_LangCHT.Checked);
 
-        var f1 = CLB_FormRegular;
-        var f2 = CLB_FormShiny;
-        for (byte i = 0; i < f1.Items.Count; i++)
+        for (byte i = 0; i < CLB_FormRegular.Items.Count; i++)
         {
-            Zukan.SetHasFormFlag(species, i, false, f1.GetItemChecked(i));
-            Zukan.SetHasFormFlag(species, i, true, f2.GetItemChecked(i));
+            Zukan.SetHasFormFlag(species, i, false, CLB_FormRegular.GetItemChecked(i));
+            Zukan.SetHasFormFlag(species, i, true, CLB_FormShiny.GetItemChecked(i));
         }
     }
 
@@ -145,15 +145,6 @@ public partial class SAV_PokedexBDSPLumi : Form
         Close();
     }
 
-    private void B_GiveAll_Click(object sender, EventArgs e)
-    {
-        bool all = ModifierKeys != Keys.Control;
-        CB_State.SelectedIndex = all ? (int)ZukanState8b.Caught : 0;
-        CHK_M.Checked = CHK_F.Checked = CHK_MS.Checked = CHK_FS.Checked = all;
-        CHK_LangJPN.Checked = CHK_LangENG.Checked = CHK_LangFRE.Checked = CHK_LangGER.Checked = CHK_LangITA.Checked = all;
-        CHK_LangSPA.Checked = CHK_LangKOR.Checked = CHK_LangCHS.Checked = CHK_LangCHT.Checked = all;
-    }
-
     private void B_Modify_Click(object sender, EventArgs e)
     {
         Button btn = (Button)sender;
@@ -164,6 +155,12 @@ public partial class SAV_PokedexBDSPLumi : Form
     {
         Button btn = (Button)sender;
         modifyMenuForms.Show(btn.PointToScreen(new Point(0, btn.Height)));
+    }
+
+    private void B_ModifyEntry_Click(object sender, EventArgs e)
+    {
+        Button btn = (Button)sender;
+        modifyMenuEntry.Show(btn.PointToScreen(new Point(0, btn.Height)));
     }
 
     private void ModifyAll(object sender, EventArgs e)
@@ -193,14 +190,7 @@ public partial class SAV_PokedexBDSPLumi : Form
             for (int i = 0; i < f1.Items.Count; i++)
             {
                 f1.SetItemChecked(i, true);
-                f2.SetItemChecked(i, sender == mnuFormAllShinies);
-            }
-        }
-        else if (sender == mnuFormAllShinies)
-        {
-            for (int i = 0; i < f1.Items.Count; i++)
-            {
-                f2.SetItemChecked(i, true);
+                f2.SetItemChecked(i, ModifierKeys == Keys.Control);
             }
         }
         else // None
@@ -212,4 +202,65 @@ public partial class SAV_PokedexBDSPLumi : Form
             }
         }
     }
+
+    private void ModifyEntry(object sender, EventArgs e)
+    {
+        var savLang = SAV.Language;
+
+        if (sender == mnuMFCurLang)
+        {
+            CHK_M.Checked = CHK_F.Checked = true;
+            CHK_MS.Checked = CHK_FS.Checked = (ModifierKeys == Keys.Control);
+
+            CB_State.SelectedIndex = (int)ZukanState8b.Caught;
+
+            if (species > 493) return;
+
+            for (int lang = (int)LanguageID.Japanese; lang <= (int)LanguageID.ChineseT; lang++)
+            {
+                CHK_LangJPN.Checked = (lang == savLang);
+                CHK_LangENG.Checked = (lang == savLang);
+                CHK_LangFRE.Checked = (lang == savLang);
+                CHK_LangITA.Checked = (lang == savLang);
+                CHK_LangGER.Checked = (lang == savLang);
+                CHK_LangSPA.Checked = (lang == savLang);
+                CHK_LangKOR.Checked = (lang == savLang);
+                CHK_LangCHS.Checked = (lang == savLang);
+                CHK_LangCHT.Checked = (lang == savLang);
+            }
+        }
+
+        if (sender == mnuMFAllLang)
+        {
+            CHK_M.Checked = CHK_F.Checked = true;
+            CHK_MS.Checked = CHK_FS.Checked = (ModifierKeys == Keys.Control);
+
+            CB_State.SelectedIndex = (int)ZukanState8b.Caught;
+
+            if (species > 493) return;
+
+            CHK_LangJPN.Checked = CHK_LangENG.Checked = CHK_LangFRE.Checked = CHK_LangGER.Checked = CHK_LangITA.Checked = true;
+            CHK_LangSPA.Checked = CHK_LangKOR.Checked = CHK_LangCHS.Checked = CHK_LangCHT.Checked = true;
+        }
+
+        if (sender == mnuClearEntry)
+        {
+            CHK_M.Checked = CHK_F.Checked = CHK_MS.Checked = CHK_FS.Checked = false;
+
+            CB_State.SelectedIndex = (int)ZukanState8b.None;
+
+            for (int i = 0; i < CLB_FormRegular.Items.Count; i++)
+            {
+                CLB_FormRegular.SetItemChecked(i, false);
+                CLB_FormShiny.SetItemChecked(i, false);
+            }
+
+            if (species > 493) return;
+
+            CHK_LangJPN.Checked = CHK_LangENG.Checked = CHK_LangFRE.Checked = CHK_LangGER.Checked = CHK_LangITA.Checked = false;
+            CHK_LangSPA.Checked = CHK_LangKOR.Checked = CHK_LangCHS.Checked = CHK_LangCHT.Checked = false;
+        }
+    }
+
+    private void dexTips_Popup(object sender, PopupEventArgs e) { }
 }

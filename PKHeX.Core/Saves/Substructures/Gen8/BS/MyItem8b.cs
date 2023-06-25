@@ -15,7 +15,7 @@ public sealed class MyItem8b : MyItem
     public MyItem8b(SAV8BS sav, int offset) : base(sav)
     {
         Offset = offset;
-        lumi = sav is SAV8BSLuminescent ? true : false;
+        lumi = sav is SAV8BSLuminescent;
     }
 
     public int GetItemQuantity(ushort itemIndex)
@@ -42,19 +42,13 @@ public sealed class MyItem8b : MyItem
 
     public InventoryType GetType(ushort itemIndex)
     {
-        if (lumi)
-            return ItemStorage8BDSPLumi.GetInventoryPouch(itemIndex);
-        else
-            return ItemStorage8BDSP.GetInventoryPouch(itemIndex);
+        return lumi ? ItemStorage8BDSPLumi.GetInventoryPouch(itemIndex) : ItemStorage8BDSP.GetInventoryPouch(itemIndex);
     }
 
     public ushort GetNextSortIndex(InventoryType type)
     {
         ReadOnlySpan<ushort> legal = new();
-        if (lumi)
-            legal = ItemStorage8BDSPLumi.GetLegal(type);
-        else
-            legal = ItemStorage8BDSP.GetLegal(type);
+        legal = lumi ? ItemStorage8BDSPLumi.GetLegal(type) : ItemStorage8BDSP.GetLegal(type);
 
         ushort max = 0;
         foreach (var itemID in legal)

@@ -45,6 +45,9 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         453, 454, 455, 459, 460, 461, 462, 463, 464, 466, 467, 631, 632,
 
         1267, 1278, 1822,
+
+        // Reimplemented by Lumi
+        458,
         
         // New to Luminescent
         1823, 1824, 1832, 1833,
@@ -114,7 +117,7 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         InventoryType.Berries, InventoryType.Balls, InventoryType.BattleItems, InventoryType.Treasure,
     };
 
-    // used in legality/core
+    // used in legality core
     // not yet implemented
     public static ushort[] GetAll()
     {

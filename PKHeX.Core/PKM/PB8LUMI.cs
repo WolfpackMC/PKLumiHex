@@ -17,7 +17,7 @@ public sealed class PB8LUMI : PB8
     public override bool IsNative => BDSPLumi;
 
     // Maximums
-    public override ushort MaxMoveID => Legal.MaxMoveID_8a;
+    public override ushort MaxMoveID => Legal.MaxMoveID_8b;
     public override ushort MaxSpeciesID => Legal.MaxSpeciesID_9;
     public override int MaxAbilityID => Legal.MaxAbilityID_8b;
     public override int MaxItemID => 1836;
