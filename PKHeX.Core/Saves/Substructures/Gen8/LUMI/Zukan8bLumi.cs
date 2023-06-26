@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics.Metrics;
+using System.Reflection;
 using static System.Buffers.Binary.BinaryPrimitives;
 
 namespace PKHeX.Core;
@@ -27,7 +28,7 @@ public sealed class Zukan8bLumi : Zukan8b
     {
         if ((uint)index > (uint)Legal.MaxSpeciesID_9)
             throw new ArgumentOutOfRangeException(nameof(index));
-        return baseOffset + (index / 8);
+        return baseOffset + (index % 8);
     }
 
     private void SetNibble(ref byte bitFlag, byte bitIndex, byte nibbleValue)
@@ -99,15 +100,38 @@ public sealed class Zukan8bLumi : Zukan8b
         WriteInt32LittleEndian(SAV.Data.AsSpan(PokeDex + offset), value);
     }
 
+    public override void SetDex(PKM pk)
+    {
+        ushort species = pk.Species;
+        if (species is 0 or > Legal.MaxSpeciesID_4)
+            return;
+        if (pk.IsEgg) // do not add
+            return;
+
+        var originalState = GetState(species);
+        var shiny = pk.IsShiny;
+        var m = (pk.Gender == 0 || pk.Gender == 2);
+        var f = (pk.Gender == 1 || pk.Gender == 2);
+        var ms = m && shiny;
+        var fs = f && shiny;
+
+        SetState(species, ZukanState8b.Caught);
+        SetGenderFlags(species, m, f, ms, fs);
+        SetLanguageFlag(species, pk.Language, true);
+        SetHasFormFlag(species, pk.Form, shiny, true);
+
+        if (species is (int)Species.Spinda)
+            SAV.ZukanExtra.SetDex(originalState, pk.EncryptionConstant, pk.Gender, shiny);
+    }
+
     public override void CaughtAll(bool shinyToo = false)
     {
-        var pt = Personal;
         for (ushort species = 1; species <= Legal.MaxSpeciesID_9; species++)
         {
             SetState(species, ZukanState8b.Caught);
-            var pi = pt[species];
-            var m = !pi.OnlyFemale;
-            var f = !pi.OnlyMale;
+
+            var m = !OnlyFemale(species);
+            var f = !OnlyMale(species);
             SetGenderFlags(species, m, f, m && shinyToo, f && shinyToo);
             SetLanguageFlag(species, SAV.Language, true);
         }
@@ -115,16 +139,15 @@ public sealed class Zukan8bLumi : Zukan8b
 
     public override void SetAllSeen(bool value = true, bool shinyToo = false)
     {
-        var pt = Personal;
         for (ushort species = 1; species <= Legal.MaxSpeciesID_9; species++)
         {
             if (value)
             {
                 if (!GetSeen(species))
                     SetState(species, ZukanState8b.Seen);
-                var pi = pt[species];
-                var m = !pi.OnlyFemale;
-                var f = !pi.OnlyMale;
+
+                var m = !OnlyFemale(species);
+                var f = !OnlyMale(species);
                 SetGenderFlags(species, m, f, m && shinyToo, f && shinyToo);
             }
             else
@@ -133,15 +156,18 @@ public sealed class Zukan8bLumi : Zukan8b
             }
         }
     }
+    public override void CompleteDex(bool shinyToo)
+    {
+        for (ushort species = 1; species <= Legal.MaxSpeciesID_9; species++)
+            SetDexEntryAll(species, shinyToo);
+    }
 
     public override void SetDexEntryAll(ushort species, bool shinyToo = false)
     {
         SetState(species, ZukanState8b.Caught);
 
-        var pt = Personal;
-        var pi = pt[species];
-        var m = !pi.OnlyFemale;
-        var f = !pi.OnlyMale;
+        var m = !OnlyFemale(species);
+        var f = !OnlyMale(species);
         SetGenderFlags(species, m, f, m && shinyToo, f && shinyToo);
 
         var formCount = GetFormCount(species);
@@ -175,4 +201,7 @@ public sealed class Zukan8bLumi : Zukan8b
 
         SetLanguageFlags(species, LANGUAGE_NONE);
     }
+
+    public bool OnlyFemale(ushort species) => Personal[species].OnlyFemale;
+    public bool OnlyMale(ushort species) => Personal[species].OnlyMale;
 }

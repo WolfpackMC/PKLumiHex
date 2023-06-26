@@ -38,6 +38,7 @@ public class SAV8BS : SaveFile, ISaveFileRevision, ITrainerStatRecord, IEventFla
 
         Zukan = new Zukan8b(this, 0x7A328); // size: 0x30B8
         BattleTrainer = new BattleTrainerStatus8b(this, 0x7D3E0); // size: 0x1618
+
         MenuSelection = new MenuSelect8b(this, 0x7E9F8); // size: 0x44
         FieldObjects = new FieldObjectSave8b(this, 0x7EA3C); // size: 0x109A0 (1000 * 0x44)
         Records = new Record8b(this, 0x8F3DC); // size: 0x78 * 12
@@ -238,6 +239,7 @@ public class SAV8BS : SaveFile, ISaveFileRevision, ITrainerStatRecord, IEventFla
     {
         (int)GameVersion.BD => GameVersion.BD,
         (int)GameVersion.SP => GameVersion.SP,
+        (int)GameVersion.BDSPLUMI => GameVersion.BD,
         _ => GameVersion.Invalid,
     };
 

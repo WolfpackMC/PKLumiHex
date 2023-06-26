@@ -86,10 +86,10 @@ namespace PKHeX.WinForms
             // CHK_LangKOR
             // 
             CHK_LangKOR.AutoSize = true;
-            CHK_LangKOR.Location = new System.Drawing.Point(7, 113);
-            CHK_LangKOR.Margin = new System.Windows.Forms.Padding(4);
+            CHK_LangKOR.Location = new System.Drawing.Point(8, 151);
+            CHK_LangKOR.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_LangKOR.Name = "CHK_LangKOR";
-            CHK_LangKOR.Size = new System.Drawing.Size(63, 19);
+            CHK_LangKOR.Size = new System.Drawing.Size(78, 24);
             CHK_LangKOR.TabIndex = 19;
             CHK_LangKOR.Text = "Korean";
             dexTips.SetToolTip(CHK_LangKOR, "Luminescent Platinum only supports English for now!");
@@ -98,10 +98,10 @@ namespace PKHeX.WinForms
             // CHK_LangSPA
             // 
             CHK_LangSPA.AutoSize = true;
-            CHK_LangSPA.Location = new System.Drawing.Point(7, 97);
-            CHK_LangSPA.Margin = new System.Windows.Forms.Padding(4);
+            CHK_LangSPA.Location = new System.Drawing.Point(8, 129);
+            CHK_LangSPA.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_LangSPA.Name = "CHK_LangSPA";
-            CHK_LangSPA.Size = new System.Drawing.Size(67, 19);
+            CHK_LangSPA.Size = new System.Drawing.Size(82, 24);
             CHK_LangSPA.TabIndex = 18;
             CHK_LangSPA.Text = "Spanish";
             dexTips.SetToolTip(CHK_LangSPA, "Luminescent Platinum only supports English for now!");
@@ -110,10 +110,10 @@ namespace PKHeX.WinForms
             // CHK_LangGER
             // 
             CHK_LangGER.AutoSize = true;
-            CHK_LangGER.Location = new System.Drawing.Point(7, 81);
-            CHK_LangGER.Margin = new System.Windows.Forms.Padding(4);
+            CHK_LangGER.Location = new System.Drawing.Point(8, 108);
+            CHK_LangGER.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_LangGER.Name = "CHK_LangGER";
-            CHK_LangGER.Size = new System.Drawing.Size(68, 19);
+            CHK_LangGER.Size = new System.Drawing.Size(83, 24);
             CHK_LangGER.TabIndex = 17;
             CHK_LangGER.Text = "German";
             dexTips.SetToolTip(CHK_LangGER, "Luminescent Platinum only supports English for now!");
@@ -122,10 +122,10 @@ namespace PKHeX.WinForms
             // CHK_LangITA
             // 
             CHK_LangITA.AutoSize = true;
-            CHK_LangITA.Location = new System.Drawing.Point(7, 64);
-            CHK_LangITA.Margin = new System.Windows.Forms.Padding(4);
+            CHK_LangITA.Location = new System.Drawing.Point(8, 85);
+            CHK_LangITA.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_LangITA.Name = "CHK_LangITA";
-            CHK_LangITA.Size = new System.Drawing.Size(58, 19);
+            CHK_LangITA.Size = new System.Drawing.Size(72, 24);
             CHK_LangITA.TabIndex = 16;
             CHK_LangITA.Text = "Italian";
             dexTips.SetToolTip(CHK_LangITA, "Luminescent Platinum only supports English for now!");
@@ -134,10 +134,10 @@ namespace PKHeX.WinForms
             // CHK_LangFRE
             // 
             CHK_LangFRE.AutoSize = true;
-            CHK_LangFRE.Location = new System.Drawing.Point(7, 49);
-            CHK_LangFRE.Margin = new System.Windows.Forms.Padding(4);
+            CHK_LangFRE.Location = new System.Drawing.Point(8, 65);
+            CHK_LangFRE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_LangFRE.Name = "CHK_LangFRE";
-            CHK_LangFRE.Size = new System.Drawing.Size(62, 19);
+            CHK_LangFRE.Size = new System.Drawing.Size(74, 24);
             CHK_LangFRE.TabIndex = 15;
             CHK_LangFRE.Text = "French";
             dexTips.SetToolTip(CHK_LangFRE, "Luminescent Platinum only supports English for now!");
@@ -146,10 +146,10 @@ namespace PKHeX.WinForms
             // CHK_LangJPN
             // 
             CHK_LangJPN.AutoSize = true;
-            CHK_LangJPN.Location = new System.Drawing.Point(7, 16);
-            CHK_LangJPN.Margin = new System.Windows.Forms.Padding(4);
+            CHK_LangJPN.Location = new System.Drawing.Point(8, 21);
+            CHK_LangJPN.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_LangJPN.Name = "CHK_LangJPN";
-            CHK_LangJPN.Size = new System.Drawing.Size(73, 19);
+            CHK_LangJPN.Size = new System.Drawing.Size(91, 24);
             CHK_LangJPN.TabIndex = 13;
             CHK_LangJPN.Text = "Japanese";
             dexTips.SetToolTip(CHK_LangJPN, "Luminescent Platinum only supports English for now!");
@@ -157,10 +157,10 @@ namespace PKHeX.WinForms
             // 
             // B_ModifyEntry
             // 
-            B_ModifyEntry.Location = new System.Drawing.Point(174, 14);
-            B_ModifyEntry.Margin = new System.Windows.Forms.Padding(4);
+            B_ModifyEntry.Location = new System.Drawing.Point(199, 19);
+            B_ModifyEntry.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             B_ModifyEntry.Name = "B_ModifyEntry";
-            B_ModifyEntry.Size = new System.Drawing.Size(134, 23);
+            B_ModifyEntry.Size = new System.Drawing.Size(153, 31);
             B_ModifyEntry.TabIndex = 23;
             B_ModifyEntry.Text = "Edit Current Entry";
             dexTips.SetToolTip(B_ModifyEntry, "Edit selected Pokemon Seen data");
@@ -169,10 +169,10 @@ namespace PKHeX.WinForms
             // 
             // B_Modify
             // 
-            B_Modify.Location = new System.Drawing.Point(315, 14);
-            B_Modify.Margin = new System.Windows.Forms.Padding(4);
+            B_Modify.Location = new System.Drawing.Point(360, 19);
+            B_Modify.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             B_Modify.Name = "B_Modify";
-            B_Modify.Size = new System.Drawing.Size(137, 23);
+            B_Modify.Size = new System.Drawing.Size(157, 31);
             B_Modify.TabIndex = 25;
             B_Modify.Text = "Edit All Dex Entries";
             dexTips.SetToolTip(B_Modify, "Edit all Pokemon Seen data");
@@ -182,10 +182,10 @@ namespace PKHeX.WinForms
             // CHK_LangCHT
             // 
             CHK_LangCHT.AutoSize = true;
-            CHK_LangCHT.Location = new System.Drawing.Point(7, 146);
-            CHK_LangCHT.Margin = new System.Windows.Forms.Padding(4);
+            CHK_LangCHT.Location = new System.Drawing.Point(8, 195);
+            CHK_LangCHT.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_LangCHT.Name = "CHK_LangCHT";
-            CHK_LangCHT.Size = new System.Drawing.Size(74, 19);
+            CHK_LangCHT.Size = new System.Drawing.Size(90, 24);
             CHK_LangCHT.TabIndex = 21;
             CHK_LangCHT.Text = "ChineseT";
             dexTips.SetToolTip(CHK_LangCHT, "Luminescent Platinum only supports English for now!");
@@ -194,10 +194,10 @@ namespace PKHeX.WinForms
             // CHK_LangCHS
             // 
             CHK_LangCHS.AutoSize = true;
-            CHK_LangCHS.Location = new System.Drawing.Point(7, 129);
-            CHK_LangCHS.Margin = new System.Windows.Forms.Padding(4);
+            CHK_LangCHS.Location = new System.Drawing.Point(8, 172);
+            CHK_LangCHS.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_LangCHS.Name = "CHK_LangCHS";
-            CHK_LangCHS.Size = new System.Drawing.Size(74, 19);
+            CHK_LangCHS.Size = new System.Drawing.Size(90, 24);
             CHK_LangCHS.TabIndex = 20;
             CHK_LangCHS.Text = "ChineseS";
             dexTips.SetToolTip(CHK_LangCHS, "Luminescent Platinum only supports English for now!");
@@ -205,10 +205,10 @@ namespace PKHeX.WinForms
             // 
             // B_ModifyForms
             // 
-            B_ModifyForms.Location = new System.Drawing.Point(462, 14);
-            B_ModifyForms.Margin = new System.Windows.Forms.Padding(4);
+            B_ModifyForms.Location = new System.Drawing.Point(528, 19);
+            B_ModifyForms.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             B_ModifyForms.Name = "B_ModifyForms";
-            B_ModifyForms.Size = new System.Drawing.Size(137, 23);
+            B_ModifyForms.Size = new System.Drawing.Size(157, 31);
             B_ModifyForms.TabIndex = 40;
             B_ModifyForms.Text = "Edit Form Data";
             dexTips.SetToolTip(B_ModifyForms, "Edit all Forms Seen data");
@@ -218,10 +218,10 @@ namespace PKHeX.WinForms
             // CHK_National
             // 
             CHK_National.AutoSize = true;
-            CHK_National.Location = new System.Drawing.Point(181, 346);
-            CHK_National.Margin = new System.Windows.Forms.Padding(4);
+            CHK_National.Location = new System.Drawing.Point(207, 461);
+            CHK_National.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_National.Name = "CHK_National";
-            CHK_National.Size = new System.Drawing.Size(120, 19);
+            CHK_National.Size = new System.Drawing.Size(149, 24);
             CHK_National.TabIndex = 42;
             CHK_National.Text = "National PokéDex";
             dexTips.SetToolTip(CHK_National, "You are given this from the start In Luminescent Platinum!\r\n");
@@ -230,10 +230,10 @@ namespace PKHeX.WinForms
             // B_Cancel
             // 
             B_Cancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            B_Cancel.Location = new System.Drawing.Point(358, 346);
-            B_Cancel.Margin = new System.Windows.Forms.Padding(4);
+            B_Cancel.Location = new System.Drawing.Point(409, 461);
+            B_Cancel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             B_Cancel.Name = "B_Cancel";
-            B_Cancel.Size = new System.Drawing.Size(94, 24);
+            B_Cancel.Size = new System.Drawing.Size(107, 32);
             B_Cancel.TabIndex = 0;
             B_Cancel.Text = "Cancel";
             B_Cancel.UseVisualStyleBackColor = true;
@@ -243,21 +243,21 @@ namespace PKHeX.WinForms
             // 
             LB_Species.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             LB_Species.FormattingEnabled = true;
-            LB_Species.ItemHeight = 15;
-            LB_Species.Location = new System.Drawing.Point(17, 45);
-            LB_Species.Margin = new System.Windows.Forms.Padding(4);
+            LB_Species.ItemHeight = 20;
+            LB_Species.Location = new System.Drawing.Point(19, 60);
+            LB_Species.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             LB_Species.Name = "LB_Species";
-            LB_Species.Size = new System.Drawing.Size(151, 319);
+            LB_Species.Size = new System.Drawing.Size(172, 424);
             LB_Species.TabIndex = 2;
             LB_Species.SelectedIndexChanged += ChangeLBSpecies;
             // 
             // CHK_LangENG
             // 
             CHK_LangENG.AutoSize = true;
-            CHK_LangENG.Location = new System.Drawing.Point(7, 32);
-            CHK_LangENG.Margin = new System.Windows.Forms.Padding(4);
+            CHK_LangENG.Location = new System.Drawing.Point(8, 43);
+            CHK_LangENG.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_LangENG.Name = "CHK_LangENG";
-            CHK_LangENG.Size = new System.Drawing.Size(64, 19);
+            CHK_LangENG.Size = new System.Drawing.Size(78, 24);
             CHK_LangENG.TabIndex = 14;
             CHK_LangENG.Text = "English";
             CHK_LangENG.UseVisualStyleBackColor = true;
@@ -265,10 +265,10 @@ namespace PKHeX.WinForms
             // L_goto
             // 
             L_goto.AutoSize = true;
-            L_goto.Location = new System.Drawing.Point(11, 18);
-            L_goto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            L_goto.Location = new System.Drawing.Point(13, 24);
+            L_goto.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             L_goto.Name = "L_goto";
-            L_goto.Size = new System.Drawing.Size(33, 15);
+            L_goto.Size = new System.Drawing.Size(40, 20);
             L_goto.TabIndex = 20;
             L_goto.Text = "Find:";
             // 
@@ -279,10 +279,10 @@ namespace PKHeX.WinForms
             CB_Species.DropDownWidth = 95;
             CB_Species.FormattingEnabled = true;
             CB_Species.Items.AddRange(new object[] { "0" });
-            CB_Species.Location = new System.Drawing.Point(51, 16);
-            CB_Species.Margin = new System.Windows.Forms.Padding(4);
+            CB_Species.Location = new System.Drawing.Point(58, 21);
+            CB_Species.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CB_Species.Name = "CB_Species";
-            CB_Species.Size = new System.Drawing.Size(117, 23);
+            CB_Species.Size = new System.Drawing.Size(133, 28);
             CB_Species.TabIndex = 21;
             CB_Species.SelectedIndexChanged += ChangeCBSpecies;
             CB_Species.SelectedValueChanged += ChangeCBSpecies;
@@ -290,10 +290,10 @@ namespace PKHeX.WinForms
             // B_Save
             // 
             B_Save.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            B_Save.Location = new System.Drawing.Point(462, 346);
-            B_Save.Margin = new System.Windows.Forms.Padding(4);
+            B_Save.Location = new System.Drawing.Point(528, 461);
+            B_Save.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             B_Save.Name = "B_Save";
-            B_Save.Size = new System.Drawing.Size(138, 24);
+            B_Save.Size = new System.Drawing.Size(158, 32);
             B_Save.TabIndex = 24;
             B_Save.Text = "Save Changes";
             B_Save.UseVisualStyleBackColor = true;
@@ -310,11 +310,11 @@ namespace PKHeX.WinForms
             GB_Language.Controls.Add(CHK_LangFRE);
             GB_Language.Controls.Add(CHK_LangENG);
             GB_Language.Controls.Add(CHK_LangJPN);
-            GB_Language.Location = new System.Drawing.Point(174, 171);
-            GB_Language.Margin = new System.Windows.Forms.Padding(4);
+            GB_Language.Location = new System.Drawing.Point(199, 228);
+            GB_Language.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             GB_Language.Name = "GB_Language";
-            GB_Language.Padding = new System.Windows.Forms.Padding(4);
-            GB_Language.Size = new System.Drawing.Size(134, 170);
+            GB_Language.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            GB_Language.Size = new System.Drawing.Size(153, 227);
             GB_Language.TabIndex = 26;
             GB_Language.TabStop = false;
             GB_Language.Text = "Languages";
@@ -325,11 +325,11 @@ namespace PKHeX.WinForms
             GB_Encountered.Controls.Add(CHK_MS);
             GB_Encountered.Controls.Add(CHK_F);
             GB_Encountered.Controls.Add(CHK_M);
-            GB_Encountered.Location = new System.Drawing.Point(174, 74);
-            GB_Encountered.Margin = new System.Windows.Forms.Padding(4);
+            GB_Encountered.Location = new System.Drawing.Point(199, 99);
+            GB_Encountered.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             GB_Encountered.Name = "GB_Encountered";
-            GB_Encountered.Padding = new System.Windows.Forms.Padding(4);
-            GB_Encountered.Size = new System.Drawing.Size(134, 90);
+            GB_Encountered.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            GB_Encountered.Size = new System.Drawing.Size(153, 120);
             GB_Encountered.TabIndex = 31;
             GB_Encountered.TabStop = false;
             GB_Encountered.Text = "Seen";
@@ -337,10 +337,10 @@ namespace PKHeX.WinForms
             // CHK_FS
             // 
             CHK_FS.AutoSize = true;
-            CHK_FS.Location = new System.Drawing.Point(7, 64);
-            CHK_FS.Margin = new System.Windows.Forms.Padding(4);
+            CHK_FS.Location = new System.Drawing.Point(8, 85);
+            CHK_FS.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_FS.Name = "CHK_FS";
-            CHK_FS.Size = new System.Drawing.Size(96, 19);
+            CHK_FS.Size = new System.Drawing.Size(118, 24);
             CHK_FS.TabIndex = 7;
             CHK_FS.Text = "Shiny Female";
             CHK_FS.UseVisualStyleBackColor = true;
@@ -348,10 +348,10 @@ namespace PKHeX.WinForms
             // CHK_MS
             // 
             CHK_MS.AutoSize = true;
-            CHK_MS.Location = new System.Drawing.Point(7, 47);
-            CHK_MS.Margin = new System.Windows.Forms.Padding(4);
+            CHK_MS.Location = new System.Drawing.Point(8, 63);
+            CHK_MS.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_MS.Name = "CHK_MS";
-            CHK_MS.Size = new System.Drawing.Size(84, 19);
+            CHK_MS.Size = new System.Drawing.Size(103, 24);
             CHK_MS.TabIndex = 6;
             CHK_MS.Text = "Shiny Male";
             CHK_MS.UseVisualStyleBackColor = true;
@@ -359,10 +359,10 @@ namespace PKHeX.WinForms
             // CHK_F
             // 
             CHK_F.AutoSize = true;
-            CHK_F.Location = new System.Drawing.Point(7, 32);
-            CHK_F.Margin = new System.Windows.Forms.Padding(4);
+            CHK_F.Location = new System.Drawing.Point(8, 43);
+            CHK_F.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_F.Name = "CHK_F";
-            CHK_F.Size = new System.Drawing.Size(64, 19);
+            CHK_F.Size = new System.Drawing.Size(79, 24);
             CHK_F.TabIndex = 5;
             CHK_F.Text = "Female";
             CHK_F.UseVisualStyleBackColor = true;
@@ -370,10 +370,10 @@ namespace PKHeX.WinForms
             // CHK_M
             // 
             CHK_M.AutoSize = true;
-            CHK_M.Location = new System.Drawing.Point(7, 15);
-            CHK_M.Margin = new System.Windows.Forms.Padding(4);
+            CHK_M.Location = new System.Drawing.Point(8, 20);
+            CHK_M.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CHK_M.Name = "CHK_M";
-            CHK_M.Size = new System.Drawing.Size(52, 19);
+            CHK_M.Size = new System.Drawing.Size(64, 24);
             CHK_M.TabIndex = 4;
             CHK_M.Text = "Male";
             CHK_M.UseVisualStyleBackColor = true;
@@ -383,12 +383,12 @@ namespace PKHeX.WinForms
             modifyMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             modifyMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { mnuSeenNone, mnuSeenAll, mnuCaughtNone, mnuCaughtAll, mnuComplete });
             modifyMenu.Name = "modifyMenu";
-            modifyMenu.Size = new System.Drawing.Size(146, 114);
+            modifyMenu.Size = new System.Drawing.Size(166, 124);
             // 
             // mnuSeenNone
             // 
             mnuSeenNone.Name = "mnuSeenNone";
-            mnuSeenNone.Size = new System.Drawing.Size(145, 22);
+            mnuSeenNone.Size = new System.Drawing.Size(165, 24);
             mnuSeenNone.Text = "Clear All";
             mnuSeenNone.ToolTipText = "Clears all Dex entries\r\nSets Seen status for all entries to None";
             mnuSeenNone.Click += ModifyAll;
@@ -396,7 +396,7 @@ namespace PKHeX.WinForms
             // mnuSeenAll
             // 
             mnuSeenAll.Name = "mnuSeenAll";
-            mnuSeenAll.Size = new System.Drawing.Size(145, 22);
+            mnuSeenAll.Size = new System.Drawing.Size(165, 24);
             mnuSeenAll.Text = "Seen All";
             mnuSeenAll.ToolTipText = "Sets Seen status for every entry to Seen";
             mnuSeenAll.Click += ModifyAll;
@@ -404,7 +404,7 @@ namespace PKHeX.WinForms
             // mnuCaughtNone
             // 
             mnuCaughtNone.Name = "mnuCaughtNone";
-            mnuCaughtNone.Size = new System.Drawing.Size(145, 22);
+            mnuCaughtNone.Size = new System.Drawing.Size(165, 24);
             mnuCaughtNone.Text = "Caught None";
             mnuCaughtNone.ToolTipText = "Changes Captured status to Seen for every entry";
             mnuCaughtNone.Click += ModifyAll;
@@ -412,7 +412,7 @@ namespace PKHeX.WinForms
             // mnuCaughtAll
             // 
             mnuCaughtAll.Name = "mnuCaughtAll";
-            mnuCaughtAll.Size = new System.Drawing.Size(145, 22);
+            mnuCaughtAll.Size = new System.Drawing.Size(165, 24);
             mnuCaughtAll.Text = "Caught All";
             mnuCaughtAll.ToolTipText = "Every entry is set to Captured\r\nComplete Dex\r\n\r\nCTRL+Click to include shiny forms.";
             mnuCaughtAll.Click += ModifyAll;
@@ -420,7 +420,7 @@ namespace PKHeX.WinForms
             // mnuComplete
             // 
             mnuComplete.Name = "mnuComplete";
-            mnuComplete.Size = new System.Drawing.Size(145, 22);
+            mnuComplete.Size = new System.Drawing.Size(165, 24);
             mnuComplete.Text = "100% Dex";
             mnuComplete.ToolTipText = "Every entry set to Captured in all Languages";
             mnuComplete.Click += ModifyAll;
@@ -429,18 +429,18 @@ namespace PKHeX.WinForms
             // 
             CLB_FormRegular.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             CLB_FormRegular.FormattingEnabled = true;
-            CLB_FormRegular.Location = new System.Drawing.Point(314, 83);
-            CLB_FormRegular.Margin = new System.Windows.Forms.Padding(4);
+            CLB_FormRegular.Location = new System.Drawing.Point(359, 111);
+            CLB_FormRegular.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CLB_FormRegular.Name = "CLB_FormRegular";
-            CLB_FormRegular.Size = new System.Drawing.Size(138, 256);
+            CLB_FormRegular.Size = new System.Drawing.Size(157, 334);
             CLB_FormRegular.TabIndex = 34;
             // 
             // L_FormsSeen
             // 
-            L_FormsSeen.Location = new System.Drawing.Point(314, 57);
-            L_FormsSeen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            L_FormsSeen.Location = new System.Drawing.Point(359, 76);
+            L_FormsSeen.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             L_FormsSeen.Name = "L_FormsSeen";
-            L_FormsSeen.Size = new System.Drawing.Size(90, 22);
+            L_FormsSeen.Size = new System.Drawing.Size(103, 29);
             L_FormsSeen.TabIndex = 35;
             L_FormsSeen.Text = "Forms:";
             L_FormsSeen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -449,18 +449,18 @@ namespace PKHeX.WinForms
             // 
             CLB_FormShiny.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             CLB_FormShiny.FormattingEnabled = true;
-            CLB_FormShiny.Location = new System.Drawing.Point(461, 83);
-            CLB_FormShiny.Margin = new System.Windows.Forms.Padding(4);
+            CLB_FormShiny.Location = new System.Drawing.Point(527, 111);
+            CLB_FormShiny.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CLB_FormShiny.Name = "CLB_FormShiny";
-            CLB_FormShiny.Size = new System.Drawing.Size(138, 256);
+            CLB_FormShiny.Size = new System.Drawing.Size(157, 334);
             CLB_FormShiny.TabIndex = 36;
             // 
             // L_FormDisplayed
             // 
-            L_FormDisplayed.Location = new System.Drawing.Point(461, 57);
-            L_FormDisplayed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            L_FormDisplayed.Location = new System.Drawing.Point(527, 76);
+            L_FormDisplayed.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             L_FormDisplayed.Name = "L_FormDisplayed";
-            L_FormDisplayed.Size = new System.Drawing.Size(103, 22);
+            L_FormDisplayed.Size = new System.Drawing.Size(118, 29);
             L_FormDisplayed.TabIndex = 37;
             L_FormDisplayed.Text = "Shiny Forms:";
             L_FormDisplayed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -470,12 +470,12 @@ namespace PKHeX.WinForms
             modifyMenuForms.ImageScalingSize = new System.Drawing.Size(20, 20);
             modifyMenuForms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { mnuFormNone, mnuFormAllRegular });
             modifyMenuForms.Name = "modifyMenu";
-            modifyMenuForms.Size = new System.Drawing.Size(119, 48);
+            modifyMenuForms.Size = new System.Drawing.Size(135, 52);
             // 
             // mnuFormNone
             // 
             mnuFormNone.Name = "mnuFormNone";
-            mnuFormNone.Size = new System.Drawing.Size(118, 22);
+            mnuFormNone.Size = new System.Drawing.Size(134, 24);
             mnuFormNone.Text = "Clear All";
             mnuFormNone.ToolTipText = "[BDSP/Lumi]\r\nRemove Form data for: \r\nUnown, Castform, Deoxys, \r\nBurmy, Wormadam, Mothim, \r\nCherrim, Shellos, Gastrodon, \r\nRotom, Giratina, Shaymin, Arceus";
             mnuFormNone.Click += ModifyAllForms;
@@ -483,7 +483,7 @@ namespace PKHeX.WinForms
             // mnuFormAllRegular
             // 
             mnuFormAllRegular.Name = "mnuFormAllRegular";
-            mnuFormAllRegular.Size = new System.Drawing.Size(118, 22);
+            mnuFormAllRegular.Size = new System.Drawing.Size(134, 24);
             mnuFormAllRegular.Text = "Seen All";
             mnuFormAllRegular.ToolTipText = "[BDSP/Lumi]\r\nSet Form data for:\r\nUnown, Castform, Deoxys,\r\nBurmy, Wormadam, Mothim, \r\nCherrim, Shellos, Gastrodon, \r\nRotom, Giratina, Shaymin, Arceus\r\n\r\nCTRL+Click: Set Shiny Form Seen data too";
             mnuFormAllRegular.Click += ModifyAllForms;
@@ -496,10 +496,10 @@ namespace PKHeX.WinForms
             CB_State.DropDownWidth = 95;
             CB_State.FormattingEnabled = true;
             CB_State.Items.AddRange(new object[] { "None", "Heard Of", "Seen", "Captured" });
-            CB_State.Location = new System.Drawing.Point(174, 45);
-            CB_State.Margin = new System.Windows.Forms.Padding(4);
+            CB_State.Location = new System.Drawing.Point(199, 60);
+            CB_State.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             CB_State.Name = "CB_State";
-            CB_State.Size = new System.Drawing.Size(134, 23);
+            CB_State.Size = new System.Drawing.Size(153, 28);
             CB_State.TabIndex = 39;
             // 
             // modifyMenuEntry
@@ -507,12 +507,12 @@ namespace PKHeX.WinForms
             modifyMenuEntry.ImageScalingSize = new System.Drawing.Size(20, 20);
             modifyMenuEntry.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { mnuClearEntry, mnuMFCurLang, mnuMFAllLang });
             modifyMenuEntry.Name = "modifyMenu";
-            modifyMenuEntry.Size = new System.Drawing.Size(196, 70);
+            modifyMenuEntry.Size = new System.Drawing.Size(223, 76);
             // 
             // mnuClearEntry
             // 
             mnuClearEntry.Name = "mnuClearEntry";
-            mnuClearEntry.Size = new System.Drawing.Size(195, 22);
+            mnuClearEntry.Size = new System.Drawing.Size(222, 24);
             mnuClearEntry.Text = "Clear Entry";
             mnuClearEntry.ToolTipText = "Remove all Seen data";
             mnuClearEntry.Click += ModifyEntry;
@@ -520,24 +520,24 @@ namespace PKHeX.WinForms
             // mnuMFCurLang
             // 
             mnuMFCurLang.Name = "mnuMFCurLang";
-            mnuMFCurLang.Size = new System.Drawing.Size(195, 22);
-            mnuMFCurLang.Text = "Seen Base Form(s)";
+            mnuMFCurLang.Size = new System.Drawing.Size(222, 24);
+            mnuMFCurLang.Text = "Caught Base Form(s)";
             mnuMFCurLang.ToolTipText = "Set Male and Female Seen data in current Language\r\n\r\nCTRL+click: Set Shiny Seen data too";
             mnuMFCurLang.Click += ModifyEntry;
             // 
             // mnuMFAllLang
             // 
             mnuMFAllLang.Name = "mnuMFAllLang";
-            mnuMFAllLang.Size = new System.Drawing.Size(195, 22);
-            mnuMFAllLang.Text = "Seen All Foreign Forms";
+            mnuMFAllLang.Size = new System.Drawing.Size(222, 24);
+            mnuMFAllLang.Text = "Caught All Languages";
             mnuMFAllLang.ToolTipText = "Set Male and Female Seen data in all Languages\r\n\r\nCTRL+click: Set Shiny Seen data too\r\n";
             mnuMFAllLang.Click += ModifyEntry;
             // 
             // SAV_PokedexBDSPLumi
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(612, 377);
+            ClientSize = new System.Drawing.Size(699, 503);
             Controls.Add(CHK_National);
             Controls.Add(B_ModifyForms);
             Controls.Add(CB_State);
@@ -556,7 +556,7 @@ namespace PKHeX.WinForms
             Controls.Add(B_Cancel);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Icon = Properties.Resources.Icon;
-            Margin = new System.Windows.Forms.Padding(4);
+            Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "SAV_PokedexBDSPLumi";

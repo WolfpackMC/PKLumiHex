@@ -819,29 +819,25 @@ public partial class Main : Form
 
     private static string GetProgramTitle()
     {
-#if DEBUG
-        // Get the file path that started this exe.
-        var date = File.GetLastWriteTime(Environment.ProcessPath!);
-        string version = $"d-{date:yyyyMMdd}";
-#else
         var ver = Program.CurrentVersion;
         var lastnum = (ver.Build != -1) ? $".{ver.Build}" : "";
         string version = $"{ver.Major}.{ver.Minor}{lastnum}";
-#endif
-        return $"LumiH{(HaX ? "a" : "e")}X ({version})";
+
+        return $"PKLumiH{(HaX ? "a" : "e")}X {ver}";
     }
 
     private static string GetProgramTitle(SaveFile sav)
     {
-        string title = GetProgramTitle() + $" - {sav.GetType().Name}: ";
-        if (sav is ISaveFileRevision rev)
-            title = title.Insert(title.Length - 2, rev.SaveRevisionString);
         var ver = GameInfo.GetVersionName(sav.Version);
-        if (Settings.Privacy.HideSAVDetails)
-            return title + $"[{ver}]";
-        if (!sav.State.Exportable) // Blank save file
-            return title + $"{sav.Metadata.FileName} [{sav.OT} ({ver})]";
-        return title + Path.GetFileNameWithoutExtension(Util.CleanFileName(sav.Metadata.BAKName)); // more descriptive
+        var playtime = sav is SAV8BS ? new PlayTime8b((SAV8BS)sav, 0x79C04) : null;
+
+        string savGame = sav is SAV8BSLuminescent ? "Luminescent Platinum" : $"{ver}";
+        string savTime = playtime != null ? $" ({playtime.PlayedHours}:{playtime.PlayedMinutes:00}:{playtime.PlayedSeconds:00}) " : " ";
+
+        string userDetails = Settings.Privacy.HideSAVDetails ? $" | [{savGame}]" : $" | {sav.OT}{savTime}[{savGame}]";
+        string title = !sav.State.Exportable ? GetProgramTitle() : GetProgramTitle() + userDetails;
+
+        return title;
     }
 
     private static bool TryBackupExportCheck(SaveFile sav, string path)

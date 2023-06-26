@@ -50,7 +50,8 @@ public partial class SAV_PokedexBDSPLumi : Form
         LB_Species.TopIndex = LB_Species.SelectedIndex;
         GetEntry();
         editing = false;
-        B_ModifyForms.Enabled = mnuMFAllLang.Enabled = !(species > 493);
+        B_ModifyForms.Enabled = (Zukan8b.GetFormCount(species) != 0);
+        mnuMFAllLang.Enabled = !(species > 493);
     }
 
     private void ChangeLBSpecies(object sender, EventArgs e)
@@ -169,12 +170,12 @@ public partial class SAV_PokedexBDSPLumi : Form
 
         if (sender == mnuSeenNone)
             Zukan.SetAllSeen(false);
-        if (sender == mnuSeenAll)
+        else if (sender == mnuSeenAll)
             Zukan.SetAllSeen(shinyToo: ModifierKeys == Keys.Control);
-        else if (sender == mnuCaughtAll)
-            Zukan.CaughtAll();
         else if (sender == mnuCaughtNone)
             Zukan.CaughtNone();
+        else if (sender == mnuCaughtAll)
+            Zukan.CaughtAll(ModifierKeys == Keys.Control);
         else if (sender == mnuComplete)
             Zukan.CompleteDex(ModifierKeys == Keys.Control);
 
@@ -205,35 +206,26 @@ public partial class SAV_PokedexBDSPLumi : Form
 
     private void ModifyEntry(object sender, EventArgs e)
     {
-        var savLang = SAV.Language;
-
         if (sender == mnuMFCurLang)
         {
-            CHK_M.Checked = CHK_F.Checked = true;
-            CHK_MS.Checked = CHK_FS.Checked = (ModifierKeys == Keys.Control);
+            CHK_M.Checked = !Zukan.OnlyFemale(species);
+            CHK_F.Checked = !Zukan.OnlyMale(species);
+            CHK_MS.Checked = (!Zukan.OnlyFemale(species) && (ModifierKeys == Keys.Control));
+            CHK_FS.Checked = (!Zukan.OnlyMale(species) && (ModifierKeys == Keys.Control));
 
             CB_State.SelectedIndex = (int)ZukanState8b.Caught;
 
             if (species > 493) return;
 
-            for (int lang = (int)LanguageID.Japanese; lang <= (int)LanguageID.ChineseT; lang++)
-            {
-                CHK_LangJPN.Checked = (lang == savLang);
-                CHK_LangENG.Checked = (lang == savLang);
-                CHK_LangFRE.Checked = (lang == savLang);
-                CHK_LangITA.Checked = (lang == savLang);
-                CHK_LangGER.Checked = (lang == savLang);
-                CHK_LangSPA.Checked = (lang == savLang);
-                CHK_LangKOR.Checked = (lang == savLang);
-                CHK_LangCHS.Checked = (lang == savLang);
-                CHK_LangCHT.Checked = (lang == savLang);
-            }
+            Zukan.SetLanguageFlag(species, SAV.Language, true);
         }
 
         if (sender == mnuMFAllLang)
         {
-            CHK_M.Checked = CHK_F.Checked = true;
-            CHK_MS.Checked = CHK_FS.Checked = (ModifierKeys == Keys.Control);
+            CHK_M.Checked = !Zukan.OnlyFemale(species);
+            CHK_F.Checked = !Zukan.OnlyMale(species);
+            CHK_MS.Checked = (!Zukan.OnlyFemale(species) && (ModifierKeys == Keys.Control));
+            CHK_FS.Checked = (!Zukan.OnlyMale(species) && (ModifierKeys == Keys.Control));
 
             CB_State.SelectedIndex = (int)ZukanState8b.Caught;
 
@@ -249,13 +241,13 @@ public partial class SAV_PokedexBDSPLumi : Form
 
             CB_State.SelectedIndex = (int)ZukanState8b.None;
 
+            if (species > 493) return;
+
             for (int i = 0; i < CLB_FormRegular.Items.Count; i++)
             {
                 CLB_FormRegular.SetItemChecked(i, false);
                 CLB_FormShiny.SetItemChecked(i, false);
             }
-
-            if (species > 493) return;
 
             CHK_LangJPN.Checked = CHK_LangENG.Checked = CHK_LangFRE.Checked = CHK_LangGER.Checked = CHK_LangITA.Checked = false;
             CHK_LangSPA.Checked = CHK_LangKOR.Checked = CHK_LangCHS.Checked = CHK_LangCHT.Checked = false;
