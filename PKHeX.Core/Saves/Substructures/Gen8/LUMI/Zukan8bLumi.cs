@@ -28,7 +28,7 @@ public sealed class Zukan8bLumi : Zukan8b
     {
         if ((uint)index > (uint)Legal.MaxSpeciesID_9)
             throw new ArgumentOutOfRangeException(nameof(index));
-        return baseOffset + (index % 8);
+        return baseOffset + (index / 8);
     }
 
     private void SetNibble(ref byte bitFlag, byte bitIndex, byte nibbleValue)
@@ -54,7 +54,7 @@ public sealed class Zukan8bLumi : Zukan8b
         if (species > Legal.MaxSpeciesID_9)
             throw new ArgumentOutOfRangeException(nameof(species));
         // Lang flags in 1.3.0 Lumi Revision 1 Save hasn't been changed to bitfields
-        else if ((uint)species > Legal.MaxSpeciesID_8b)
+        if (species > Legal.MaxSpeciesID_8b)
             return false;
 
         var languageBit = GetLanguageBit(language);
@@ -72,7 +72,7 @@ public sealed class Zukan8bLumi : Zukan8b
         if (species > Legal.MaxSpeciesID_9)
             throw new ArgumentOutOfRangeException(nameof(species));
         // Lang flags in 1.3.0 Lumi Revision 1 Save hasn't been changed to bitfields
-        else if ((uint)species > Legal.MaxSpeciesID_8b)
+        if (species > Legal.MaxSpeciesID_8b)
             return;
 
         var languageBit = GetLanguageBit(language);
@@ -92,7 +92,7 @@ public sealed class Zukan8bLumi : Zukan8b
         if (species > Legal.MaxSpeciesID_9)
             throw new ArgumentOutOfRangeException(nameof(species));
         // Lang flags in 1.3.0 Lumi Revision 1 Save hasn't been changed to bitfields
-        else if (species > Legal.MaxSpeciesID_8b)
+        if (species > Legal.MaxSpeciesID_8b)
             return;
 
         var index = species - 1;
@@ -103,20 +103,15 @@ public sealed class Zukan8bLumi : Zukan8b
     public override void SetDex(PKM pk)
     {
         ushort species = pk.Species;
-        if (species is 0 or > Legal.MaxSpeciesID_4)
-            return;
-        if (pk.IsEgg) // do not add
-            return;
+
+        if (species is 0 or > Legal.MaxSpeciesID_9) return;
+        if (pk.IsEgg) return;
 
         var originalState = GetState(species);
-        var shiny = pk.IsShiny;
-        var m = (pk.Gender == 0 || pk.Gender == 2);
-        var f = (pk.Gender == 1 || pk.Gender == 2);
-        var ms = m && shiny;
-        var fs = f && shiny;
+        bool shiny = pk.IsShiny;
 
         SetState(species, ZukanState8b.Caught);
-        SetGenderFlags(species, m, f, ms, fs);
+        SetGenderFlag(species, pk.Gender, shiny);
         SetLanguageFlag(species, pk.Language, true);
         SetHasFormFlag(species, pk.Form, shiny, true);
 
@@ -156,32 +151,30 @@ public sealed class Zukan8bLumi : Zukan8b
             }
         }
     }
-    public override void CompleteDex(bool shinyToo)
+
+    public void SetDexEntryAll(bool shinyToo = false)
     {
         for (ushort species = 1; species <= Legal.MaxSpeciesID_9; species++)
-            SetDexEntryAll(species, shinyToo);
-    }
-
-    public override void SetDexEntryAll(ushort species, bool shinyToo = false)
-    {
-        SetState(species, ZukanState8b.Caught);
-
-        var m = !OnlyFemale(species);
-        var f = !OnlyMale(species);
-        SetGenderFlags(species, m, f, m && shinyToo, f && shinyToo);
-
-        var formCount = GetFormCount(species);
-        if (formCount is not 0)
         {
-            for (byte form = 0; form < formCount; form++)
-            {
-                SetHasFormFlag(species, form, false, true);
-                if (shinyToo)
-                    SetHasFormFlag(species, form, true, true);
-            }
-        }
+            SetState(species, ZukanState8b.Caught);
 
-        SetLanguageFlags(species, LANGUAGE_ALL);
+            var m = !OnlyFemale(species);
+            var f = !OnlyMale(species);
+            SetGenderFlags(species, m, f, m && shinyToo, f && shinyToo);
+
+            var formCount = GetFormCount(species);
+            if (formCount is not 0)
+            {
+                for (byte form = 0; form < formCount; form++)
+                {
+                    SetHasFormFlag(species, form, false, true);
+                    if (shinyToo)
+                        SetHasFormFlag(species, form, true, true);
+                }
+            }
+
+            SetLanguageFlags(species, LANGUAGE_ALL);
+        }
     }
 
     public override void ClearDexEntryAll(ushort species)

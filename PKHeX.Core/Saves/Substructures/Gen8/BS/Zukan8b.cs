@@ -82,10 +82,10 @@ public class Zukan8b : ZukanBase<SAV8BS>
     private const int SIZE_LANGUAGE    = sizeof(int) * COUNT_SPECIES;
 
     private const int OFS_STATE = 0;
-    private const int OFS_MALESHINY = OFS_STATE + SIZE_SPECIES;
-    private const int OFS_FEMALESHINY = OFS_MALESHINY + SIZE_SPECIESBOOL;
-    private const int OFS_MALE = OFS_FEMALESHINY + SIZE_SPECIESBOOL;
-    private const int OFS_FEMALE = OFS_MALE + SIZE_SPECIESBOOL;
+    protected const int OFS_MALESHINY = OFS_STATE + SIZE_SPECIES;
+    protected const int OFS_FEMALESHINY = OFS_MALESHINY + SIZE_SPECIESBOOL;
+    protected const int OFS_MALE = OFS_FEMALESHINY + SIZE_SPECIESBOOL;
+    protected const int OFS_FEMALE = OFS_MALE + SIZE_SPECIESBOOL;
 
     private const int OFS_UNOWN      = OFS_FEMALE     + SIZE_SPECIESBOOL;
     private const int OFS_SUNOWN     = OFS_UNOWN      + SIZE_UNOWN;
@@ -350,7 +350,7 @@ public class Zukan8b : ZukanBase<SAV8BS>
             SAV.ZukanExtra.SetDex(originalState, pk.EncryptionConstant, pk.Gender, shiny);
     }
 
-    private void SetGenderFlag(ushort species, int gender, bool shiny)
+    public void SetGenderFlag(ushort species, int gender, bool shiny)
     {
         switch (gender)
         {

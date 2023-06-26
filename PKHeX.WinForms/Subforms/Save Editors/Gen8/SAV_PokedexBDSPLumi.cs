@@ -50,8 +50,6 @@ public partial class SAV_PokedexBDSPLumi : Form
         LB_Species.TopIndex = LB_Species.SelectedIndex;
         GetEntry();
         editing = false;
-        B_ModifyForms.Enabled = (Zukan8b.GetFormCount(species) != 0);
-        mnuMFAllLang.Enabled = !(species > 493);
     }
 
     private void ChangeLBSpecies(object sender, EventArgs e)
@@ -64,7 +62,6 @@ public partial class SAV_PokedexBDSPLumi : Form
         CB_Species.SelectedValue = species;
         GetEntry();
         editing = false;
-        B_ModifyForms.Enabled = mnuMFAllLang.Enabled = !(species > 493);
     }
 
     private void GetEntry()
@@ -79,6 +76,7 @@ public partial class SAV_PokedexBDSPLumi : Form
 
         // Lang flags in 1.3.0 Lumi Revision 1 Save hasn't been changed to bitfields
         GB_Language.Visible = (uint)species <= 493;
+        if (species > 493) return;
 
         CHK_LangJPN.Checked = Zukan.GetLanguageFlag(species, (int)LanguageID.Japanese);
         CHK_LangENG.Checked = Zukan.GetLanguageFlag(species, (int)LanguageID.English);
@@ -110,11 +108,10 @@ public partial class SAV_PokedexBDSPLumi : Form
 
     private void SetEntry()
     {
-        if (species > 1010)
-            return;
-
         Zukan.SetState(species, (ZukanState8b)CB_State.SelectedIndex);
         Zukan.SetGenderFlags(species, CHK_M.Checked, CHK_F.Checked, CHK_MS.Checked, CHK_FS.Checked);
+
+        if (species > 493) return;
 
         Zukan.SetLanguageFlag(species, (int)LanguageID.Japanese, CHK_LangJPN.Checked);
         Zukan.SetLanguageFlag(species, (int)LanguageID.English, CHK_LangENG.Checked);
@@ -177,7 +174,7 @@ public partial class SAV_PokedexBDSPLumi : Form
         else if (sender == mnuCaughtAll)
             Zukan.CaughtAll(ModifierKeys == Keys.Control);
         else if (sender == mnuComplete)
-            Zukan.CompleteDex(ModifierKeys == Keys.Control);
+            Zukan.SetDexEntryAll(ModifierKeys == Keys.Control);
 
         GetEntry();
     }
@@ -217,19 +214,25 @@ public partial class SAV_PokedexBDSPLumi : Form
 
             if (species > 493) return;
 
-            Zukan.SetLanguageFlag(species, SAV.Language, true);
+            CHK_LangJPN.Checked = ((int)LanguageID.Japanese == SAV.Language);
+            CHK_LangENG.Checked = ((int)LanguageID.English == SAV.Language);
+            CHK_LangFRE.Checked = ((int)LanguageID.French == SAV.Language);
+            CHK_LangITA.Checked = ((int)LanguageID.Italian == SAV.Language);
+            CHK_LangGER.Checked = ((int)LanguageID.German == SAV.Language);
+            CHK_LangSPA.Checked = ((int)LanguageID.Spanish == SAV.Language);
+            CHK_LangKOR.Checked = ((int)LanguageID.Korean == SAV.Language);
+            CHK_LangCHS.Checked = ((int)LanguageID.ChineseS == SAV.Language);
+            CHK_LangCHT.Checked = ((int)LanguageID.ChineseT == SAV.Language);
         }
 
         if (sender == mnuMFAllLang)
         {
+            CB_State.SelectedIndex = (int)ZukanState8b.Caught;
+
             CHK_M.Checked = !Zukan.OnlyFemale(species);
             CHK_F.Checked = !Zukan.OnlyMale(species);
             CHK_MS.Checked = (!Zukan.OnlyFemale(species) && (ModifierKeys == Keys.Control));
             CHK_FS.Checked = (!Zukan.OnlyMale(species) && (ModifierKeys == Keys.Control));
-
-            CB_State.SelectedIndex = (int)ZukanState8b.Caught;
-
-            if (species > 493) return;
 
             CHK_LangJPN.Checked = CHK_LangENG.Checked = CHK_LangFRE.Checked = CHK_LangGER.Checked = CHK_LangITA.Checked = true;
             CHK_LangSPA.Checked = CHK_LangKOR.Checked = CHK_LangCHS.Checked = CHK_LangCHT.Checked = true;

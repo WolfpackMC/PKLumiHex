@@ -4,8 +4,7 @@ https://github.com/TalonSabre/PKLumiHeX/
 0.3.3
 - PokeDex CTRL+Click now works for the Caught All function
   - Note: CTRL+Click sets Shiny versions
-- PokeDex should read and write Genders + Shinies correctly
-  - Will no longer set Male for species exclusively Female, and vice versa
+- Edit Current Entry will no longer set Male for species exclusively Female, and vice versa
 - Change wording in Edit Current Entry button
 - Importing a Pokemon will properly set the PokeDex
 - Main Window title tweaks
