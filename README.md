@@ -27,7 +27,8 @@
             <ul><li>Includes box importing and exporting (*.bin)</li></ul>
         </ul>
         <li><h4>Bag Editor</h4></li>
-        <ul><li>New items added to Luminescent Platinum included!</li></ul>
+        <ul><li>New items from Luminescent Platinum included!</li></ul>
+        <ul><li></li></ul>
         <li><h4>Pokédex Editor</h4></li>
         <ul>
             <li>Allows setting seen and caught data</li>
@@ -37,7 +38,7 @@
         <li><h5>Seal Stickers Editor</h5></li>
         <li><h4>Trainer Info Editor</h4></li>
         <ul>
-            <ul><li>Luminescent Platinum only supports Brilliant Diamond Version, and the English Language for now!</li></ul>
+            <li>Luminescent Platinum only supports Brilliant Diamond Version, and the English Language for now!</li>
             <ul><li>If you started your game in a language besides English, you can change it with this editor.</li></ul>
         </ul>
     </ul>
