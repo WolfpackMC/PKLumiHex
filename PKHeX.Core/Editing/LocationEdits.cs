@@ -16,6 +16,7 @@ public static class LocationEdits
     public static int GetNoneLocation(EntityContext context) => context switch
     {
         EntityContext.Gen8b => Locations.Default8bNone,
+        EntityContext.Gen8bLumi => Locations.Default8bNone,
         _ => 0,
     };
 }

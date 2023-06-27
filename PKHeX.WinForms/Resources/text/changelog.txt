@@ -1,11 +1,19 @@
 LumiHeX
 https://github.com/TalonSabre/PKLumiHeX/
 
+0.3.4
+- Fix PokeDex Editor crashing when opening
+- Add more legal items to their respective pouches
+  - Should no longer lose certain items upon using the Bag Editor
+  - Items will only be available to set in the correct pouch
+- Pokemon that were marked as hatched eggs when they were not will now set properly
+  - You will have to set and unset the As Egg field, then set your Pokemon to fix those affected.
+
 0.3.3
 - PokeDex CTRL+Click now works for the Caught All function
   - Note: CTRL+Click sets Shiny versions
 - Edit Current Entry will no longer set Male for species exclusively Female, and vice versa
-- Change wording in Edit Current Entry button
+- Change wording in Edit Current Entry button menu
 - Importing a Pokemon will properly set the PokeDex
 - Main Window title tweaks
   - Added "PK" to title

@@ -19,14 +19,14 @@ public sealed class Zukan8bLumi : Zukan8b
 
     private int GetStateStructOffset(int species)
     {
-        if ((uint)species > (uint)Legal.MaxSpeciesID_9)
+        if (species > Legal.MaxSpeciesID_9)
             throw new ArgumentOutOfRangeException(nameof(species));
         return OFS_STATE + (species / 2);
     }
 
     private int GetBooleanStructOffset(int index, int baseOffset)
     {
-        if ((uint)index > (uint)Legal.MaxSpeciesID_9)
+        if (index > Legal.MaxSpeciesID_9 - 1)
             throw new ArgumentOutOfRangeException(nameof(index));
         return baseOffset + (index / 8);
     }
@@ -112,6 +112,9 @@ public sealed class Zukan8bLumi : Zukan8b
 
         SetState(species, ZukanState8b.Caught);
         SetGenderFlag(species, pk.Gender, shiny);
+
+        if (species > Legal.MaxSpeciesID_8b) return;
+
         SetLanguageFlag(species, pk.Language, true);
         SetHasFormFlag(species, pk.Form, shiny, true);
 
@@ -128,6 +131,8 @@ public sealed class Zukan8bLumi : Zukan8b
             var m = !OnlyFemale(species);
             var f = !OnlyMale(species);
             SetGenderFlags(species, m, f, m && shinyToo, f && shinyToo);
+
+            if (species > Legal.MaxSpeciesID_8b) return;
             SetLanguageFlag(species, SAV.Language, true);
         }
     }
@@ -162,6 +167,8 @@ public sealed class Zukan8bLumi : Zukan8b
             var f = !OnlyMale(species);
             SetGenderFlags(species, m, f, m && shinyToo, f && shinyToo);
 
+            if (species > 493) return;
+
             var formCount = GetFormCount(species);
             if (formCount is not 0)
             {
@@ -181,6 +188,8 @@ public sealed class Zukan8bLumi : Zukan8b
     {
         SetState(species, ZukanState8b.None);
         SetGenderFlags(species, false, false, false, false);
+
+        if (species > Legal.MaxSpeciesID_8b) return;
 
         var formCount = GetFormCount(species);
         if (formCount is not 0)

@@ -106,7 +106,7 @@ public partial class SAV_Inventory : Form
             dgv.Columns.Add(GetCountColumn(pouch, true, ColumnFreeSpaceIndex = dgv.Columns.Count, "Free"));
 
         // Populate with rows
-        var itemarr = Main.HaX ? itemlist : GetStringsForPouch(pouch.GetAllItems());
+        var itemarr = Main.HaX ? SAV is SAV8BSLuminescent ? GetStringsForPouch(pouch.GetAllItems()) : itemlist : GetStringsForPouch(pouch.GetAllItems());
         item.Items.AddRange(itemarr);
 
         var items = pouch.Items;
