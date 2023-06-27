@@ -28,7 +28,6 @@
         </ul>
         <li><h4>Bag Editor</h4></li>
         <ul><li>New items from Luminescent Platinum included!</li></ul>
-        <ul><li></li></ul>
         <li><h4>Pokédex Editor</h4></li>
         <ul>
             <li>Allows setting seen and caught data</li>
