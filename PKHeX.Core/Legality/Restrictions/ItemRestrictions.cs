@@ -56,7 +56,7 @@ public static class ItemRestrictions
     private static readonly bool[] ReleasedHeldItems_6 = GetPermitList(MaxItemID_6_AO, HeldItems_AO, ItemStorage6XY.Unreleased);
     private static readonly bool[] ReleasedHeldItems_7 = GetPermitList(MaxItemID_7_USUM, HeldItems_USUM, ItemStorage7SM.Unreleased);
     private static readonly bool[] ReleasedHeldItems_8 = GetPermitList(MaxItemID_8, HeldItems_SWSH, ItemStorage8SWSH.Unreleased, ItemStorage8SWSH.DynamaxCrystalBCAT);
-    private static readonly bool[] ReleasedHeldItems_8b = GetPermitList(MaxItemID_8b, HeldItems_BS, ItemStorage8BDSP.Unreleased, ItemStorage8BDSP.DisallowHeldTreasure);
+    private static readonly bool[] ReleasedHeldItems_8b = GetPermitList(MaxItemID_8b, HeldItems_BS, ItemStorage8BDSPLumi.Unreleased, ItemStorage8BDSP.DisallowHeldTreasure);
     private static readonly bool[] ReleasedHeldItems_8bLumi = GetPermitList(1836, HeldItems_BS, ItemStorage8BDSP.Unreleased, ItemStorage8BDSP.DisallowHeldTreasure);
     private static readonly bool[] ReleasedHeldItems_9 = GetPermitList(MaxItemID_9, HeldItems_SV, ItemStorage9SV.Unreleased);
 

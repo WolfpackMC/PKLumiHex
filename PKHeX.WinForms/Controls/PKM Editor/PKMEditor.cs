@@ -276,6 +276,7 @@ public sealed partial class PKMEditor : UserControl, IMainEditor
         EntityContext.Gen7b => (PopulateFieldsPB7, PreparePB7),
         EntityContext.Gen8a => (PopulateFieldsPA8, PreparePA8),
         EntityContext.Gen8b => (PopulateFieldsPB8, PreparePB8),
+        EntityContext.Gen8bLumi => (PopulateFieldsPB8, PreparePB8),
         _ => throw new ArgumentOutOfRangeException(nameof(context), context, null),
     };
 
