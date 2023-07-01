@@ -1,7 +1,11 @@
 LumiHeX
 https://github.com/TalonSabre/PKLumiHeX/
 
-0.3.4
+0.3.5   7-1-2023
+- Items missing data in Lumi can no longer be added to your bag
+  - Working items that would previously be removed, will now stay
+
+0.3.4   6-26-2023
 - Fix PokeDex Editor crashing when opening
 - Add more legal items to their respective pouches
   - Should no longer lose certain items upon using the Bag Editor
@@ -9,7 +13,7 @@ https://github.com/TalonSabre/PKLumiHeX/
 - Pokemon that were marked as hatched eggs when they were not will now set properly
   - You will have to set and unset the As Egg field, then set your Pokemon to fix those affected.
 
-0.3.3
+0.3.3   6-26-2023
 - PokeDex CTRL+Click now works for the Caught All function
   - Note: CTRL+Click sets Shiny versions
 - Edit Current Entry will no longer set Male for species exclusively Female, and vice versa
@@ -23,7 +27,7 @@ https://github.com/TalonSabre/PKLumiHeX/
     - Lumi save Game Version is "Luminescent Platinum"
     - You can use the setting HideSAVDetails under Privacy to only show Game Version
 
-0.3.2
+0.3.2   6-25-2023
 - PokeDex Editor completely restored! Credit Red. for his code
   - Seen, Captured, Male, Female, Shiny, Clear Dex, Complete Dex, everything should work without breaking your dex.
   - Comes with a slightly modified layout, and some new tooltips!
@@ -35,37 +39,41 @@ https://github.com/TalonSabre/PKLumiHeX/
 
 [0.3.1 version number skipped due to a versioning error]
 
-0.3
+0.3     6-20-2023
 - PokeDex Editor has been restored!
   - If you have used a previous version of PKLumiHeX, you may have noticed your Pokedex looked wrong in game.
     - Unfortunately, this will not fix by itself, you will need to manually set the relevent flags in PKLumiHeX.
     - Fortunately, you can either clear the entire dex or fully complete it as seen below
 - PKLumiHeX now reads/writes PLA moves on Lumi saves (oops)
 
-0.2.3
-- Fixed Update Checker to use the new URL
-  - PKLumiHeX will let you know if an update is available! (For good this time)
+0.2.3   6-15-2023
+- Fixed Update Checker to use the [correct] URL
+  - PKLumiHeX will let you know if an update is available! (For real this time)
 - Fix TMs Reading and Writing
 - Fix import, export and adding Nincada and Spinda to save file.
 
-0.2.2
+0.2.2   6-15-2023
 - Reimplement Update Checker
   - LumiHeX will let you know if an update is available!
 - Lumi items should appear on the hold items list now
 
-0.2.1
+0.2.1   6-15-2023
 - Fixed Batch Editor not changing box and party Pokemon
 
-0.2
+0.2     6-15-2023
 - Lumi saves can now read items added to Luminescent
   - Things like the Everlasting Candy will not be removed from save
   - Can also add/remove them from your bag if you want
   - Will display gen 9 Pokemon again
 
-0.1.1
+0.1.1   6-14-2023
 - Lumi saves can now read national dex species data.
   - gen 1-4 Pokemon load alongside gen 5-8 Pokemon
     - certain features will only apply to gen 1-4 currently
       - includes autofill data, and likely more legality qol features
   - No longer will display gen 9 Pokemon
 - Artwork sprites load by default (to closer match custom lumi sprites)
+
+1.0     6-13-2023
+- Initial Release
+  - Port PKHeX-Luminescent to .NET 7.0

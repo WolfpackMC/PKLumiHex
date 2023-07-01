@@ -11,16 +11,16 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         // fld_pocket 0
         017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037,
         038, 039, 040, 041, 042, 043, 044, 054,
-        134,
-        // Data in Lumi
-        504, 591, 708, 709, 903,
+
+        134, // Sweet Heart
+        // 504, 591, 708, 709, 903, // Rage Candy Bar, Casteliacone, Lumiose Galette, Shalour Sable, Pewter Crunchies
     };
 
     private static ReadOnlySpan<ushort> Pouch_Ball_Lumi => new ushort[]
     {
         // fld_pocket 1
         001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016,
-        492, 493, 494, 495, 496, 497, 498, 499, 500,
+        492, 493, 494, 495, 496, 497, 498, 499,
         576,
         851,
     };
@@ -42,8 +42,7 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         199, 200, 201, 202, 203, 204, 205, 206, 207, 208,
         209, 210, 211, 212, 686,
 
-        // Data in Lumi
-        687, 688,
+        //687, 688, // Kee Berry, Maranga Berry
     };
 
     private static ReadOnlySpan<ushort> Pouch_Regular_Lumi => new ushort[]
@@ -64,10 +63,10 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         1245, 1246, 1247, 1248, 1249, 1250, 1251, 1606,
 
         // Data in Lumi
-        538, 539, 540, 541, 542, 543, 544, 545, 546, 547,
-        640, 648, 649, 650,
-        846, 879, 880, 881, 882, 883, 884,
-        1118, 1119, 1120, 1121, 1122, 1123,
+        216, // Exp. Share
+        538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 639, 640, 650, // Battle Hold Items gen 6
+        846, 879, 880, 881, 882, 883, 884,                               // gen 7
+        1118, 1120, 1121,                                                // gen 8
 
         // New to Luminescent
         1825,
@@ -98,7 +97,7 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1821,
 
         // Data in Lumi
-        571, 580, 581, 582, 583,
+        581, 582    // Big Nugget, Pearl String
     };
 
     private static ReadOnlySpan<ushort> Pouch_Key_Lumi => new ushort[]
@@ -110,22 +109,23 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         1267, 1278, 1822,
 
         // Data in Lumi
-        430, 458, 532, 534, 535,
-        1587, 1589,
+        458, 532, 534, 535,    // Legendary Items
+        1278,                  // Rotom Catalog
+
+        // listed as fld_pocket 9 (None), but they're Key Items 
+        113, 483, // Tea, Rainbow Wing
         
         // New to Luminescent
         1823, 1824, 1832, 1833,
         1826, 1827, 1828, 1829, 1830, 1831,
         1835
     };
+
     internal static ReadOnlySpan<ushort> Unreleased => new ushort[]
     {
-        005, 016, 499, 500, 576,  851, // Ball Types
-        
-        538, 539, 540, 541, 542, 543, 544, 545, 546, 547, // Battle Hold Items gen 5
-        640, 648, 649, 650,                               // gen 6
-        846, 879, 880, 881, 882, 883, 884,                // gen 7
-        1118, 1119, 1120, 1121, 1122, 1123,               // gen 8
+        // These items will not function
+        500, // Park Ball
+        1119, 1122, 1123, // Eject Pack, Room Service, Utility Umbrella
     };
 
     public ReadOnlySpan<ushort> GetItems(InventoryType type) => GetLegal(type);
@@ -185,6 +185,6 @@ public sealed class ItemStorage8BDSPLumi : IItemStorage
         if (type is InventoryType.KeyItems)
             return true;
 
-        return ItemStorage8BDSP.Unreleased.BinarySearch((ushort)itemIndex) < 0;
+        return Unreleased.BinarySearch((ushort)itemIndex) < 0;
     }
 }
