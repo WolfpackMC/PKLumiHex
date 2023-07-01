@@ -54,8 +54,6 @@
     <ul>
         <li><h4>Event Flags Editor</h4></li>
         <ul><li>Does not contain new flags</li></ul>
-        <li><h4>Block Data Editor</h4></li>
-        <ul><li>Causes a Crash</li></ul>
     </ul>
 </div>
 <div>
