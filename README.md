@@ -59,8 +59,8 @@
 <div>
     <h3 align=left>Known 'Issues'</h3>
     <ul>
-        <li><h4>Certain Pokémon in-game appear as a Ditto</h4></li>
-        <ul><li>Affected Pokémon are not currently supported by Luminescent Platinum</li></ul>
+        <li><h4>Certain Pokémon show up as a Ditto</h4></li>
+        <ul><li>Affected Pokémon are not currently available in Luminescent Platinum 2.0F</li></ul>
         <li><h4>Shiny Pokémon and certain forms display as the default pixel art sprites</h4></li>
         <ul><li>Unfortunately, we do not have them in a style similar to what custom forms have</li></ul>
         <li><h4>Sprites for Luminescent forms do not change regardless of shinyness or sprite preference</h4></li>
