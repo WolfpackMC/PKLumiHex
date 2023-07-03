@@ -1,5 +1,12 @@
-LumiHeX
+PKLumiHeX - Authored by Red., Updated by PrinceTalon
 https://github.com/TalonSabre/PKLumiHeX/
+
+0.3.6     7-2-2023
+- Dex Editor will read and write genders seen correctly
+  - Previously would uncheck all genders for the 3 Pokemon below the selected one
+- "None" items should be removed from your bag
+  - Open and Bag Editor and Save to fix
+- Re-add missing fixes
 
 0.3.5   7-1-2023
 - Items missing data in Lumi can no longer be added to your bag

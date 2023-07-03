@@ -19,7 +19,7 @@ public sealed class Zukan8bLumi : Zukan8b
 
     private int GetStateStructOffset(int species)
     {
-        if (species > Legal.MaxSpeciesID_9)
+        if (species > Legal.MaxSpeciesID_9 - 1)
             throw new ArgumentOutOfRangeException(nameof(species));
         return OFS_STATE + (species / 2);
     }
@@ -38,12 +38,12 @@ public sealed class Zukan8bLumi : Zukan8b
 
     private void SetBit(ref byte bitFlag, byte bitIndex, bool bitValue)
     {
-        bitFlag = (byte)(bitFlag & ~(0xF << bitIndex) | ((bitValue ? 1 : 0) << bitIndex));
+        bitFlag = (byte)(bitFlag & ~(1 << bitIndex) | ((bitValue ? 1 : 0) << bitIndex));
     }
 
-    public override ZukanState8b GetState(ushort species) => (ZukanState8b)(SAV.Data[PokeDex + GetStateStructOffset(species)] >> ((species & 1) * 4) & 0xF);
+    public override ZukanState8b GetState(ushort species) => (ZukanState8b)(SAV.Data[PokeDex + GetStateStructOffset(species - 1)] >> (((species - 1) & 1) * 4) & 0xF);
 
-    public override void SetState(ushort species, ZukanState8b state) => SetNibble(ref SAV.Data[PokeDex + GetStateStructOffset(species)], (byte)((species & 1) * 4), (byte)state);
+    public override void SetState(ushort species, ZukanState8b state) => SetNibble(ref SAV.Data[PokeDex + GetStateStructOffset(species - 1)], (byte)(((species - 1) & 1) * 4), (byte)state);
 
     public override bool GetBoolean(int index, int baseOffset) => (SAV.Data[PokeDex + GetBooleanStructOffset(index, baseOffset)] >> (index % 8) & 1) == 1;
 
@@ -118,7 +118,7 @@ public sealed class Zukan8bLumi : Zukan8b
         SetLanguageFlag(species, pk.Language, true);
         SetHasFormFlag(species, pk.Form, shiny, true);
 
-        if (species is (int)Species.Spinda)
+        if (species is (ushort)Species.Spinda)
             SAV.ZukanExtra.SetDex(originalState, pk.EncryptionConstant, pk.Gender, shiny);
     }
 
@@ -133,6 +133,7 @@ public sealed class Zukan8bLumi : Zukan8b
             SetGenderFlags(species, m, f, m && shinyToo, f && shinyToo);
 
             if (species > Legal.MaxSpeciesID_8b) return;
+
             SetLanguageFlag(species, SAV.Language, true);
         }
     }
@@ -187,6 +188,7 @@ public sealed class Zukan8bLumi : Zukan8b
     public override void ClearDexEntryAll(ushort species)
     {
         SetState(species, ZukanState8b.None);
+
         SetGenderFlags(species, false, false, false, false);
 
         if (species > Legal.MaxSpeciesID_8b) return;

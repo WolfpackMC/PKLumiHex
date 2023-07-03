@@ -27,7 +27,7 @@ public partial class SAV_PokedexBDSPLumi : Form
         CB_Species.InitializeBinding();
         CB_Species.DataSource = new BindingSource(GameInfo.FilteredSources.Species.Skip(1).ToList(), null);
 
-        for (int i = 1; i < SAV.MaxSpeciesID + 1; i++)
+        for (int i = 1; i <= SAV.MaxSpeciesID; i++)
             LB_Species.Items.Add($"{i:000} - {GameInfo.Strings.specieslist[i]}");
 
         editing = false;
@@ -46,9 +46,11 @@ public partial class SAV_PokedexBDSPLumi : Form
 
         editing = true;
         species = (ushort)WinFormsUtil.GetIndex(CB_Species);
-        LB_Species.SelectedIndex = species - 1; // Since we don't allow index0 in combobox, everything is shifted by 1
+        LB_Species.SelectedIndex = species - 1;
         LB_Species.TopIndex = LB_Species.SelectedIndex;
         GetEntry();
+        B_ModifyForms.Enabled = (Zukan8b.GetFormCount(species) != 0);
+        mnuMFAllLang.Enabled = !(species > 493);
         editing = false;
     }
 
@@ -61,21 +63,26 @@ public partial class SAV_PokedexBDSPLumi : Form
         species = (ushort)(LB_Species.SelectedIndex + 1);
         CB_Species.SelectedValue = species;
         GetEntry();
+        B_ModifyForms.Enabled = (Zukan8b.GetFormCount(species) != 0);
+        mnuMFAllLang.Enabled = !(species > 493);
         editing = false;
     }
 
     private void GetEntry()
     {
-        // Load Bools for the data
+        if (species > 1010) return;
+
         CB_State.SelectedIndex = (int)Zukan.GetState(species);
+
+        // Lang flags in 1.3.0 Lumi Revision 1 Save hasn't been changed to bitfields
+        GB_Language.Visible = (uint)species <= 493;
+
         Zukan.GetGenderFlags(species, out var m, out var f, out var ms, out var fs);
         CHK_M.Checked = m;
         CHK_F.Checked = f;
         CHK_MS.Checked = ms;
         CHK_FS.Checked = fs;
 
-        // Lang flags in 1.3.0 Lumi Revision 1 Save hasn't been changed to bitfields
-        GB_Language.Visible = (uint)species <= 493;
         if (species > 493) return;
 
         CHK_LangJPN.Checked = Zukan.GetLanguageFlag(species, (int)LanguageID.Japanese);
@@ -108,7 +115,10 @@ public partial class SAV_PokedexBDSPLumi : Form
 
     private void SetEntry()
     {
+        if (species > 1010) return;
+
         Zukan.SetState(species, (ZukanState8b)CB_State.SelectedIndex);
+
         Zukan.SetGenderFlags(species, CHK_M.Checked, CHK_F.Checked, CHK_MS.Checked, CHK_FS.Checked);
 
         if (species > 493) return;
@@ -191,7 +201,7 @@ public partial class SAV_PokedexBDSPLumi : Form
                 f2.SetItemChecked(i, ModifierKeys == Keys.Control);
             }
         }
-        else // None
+        else
         {
             for (int i = 0; i < f1.Items.Count; i++)
             {
