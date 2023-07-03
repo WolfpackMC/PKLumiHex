@@ -1,6 +1,12 @@
 PKLumiHeX - Authored by Red., Updated by PrinceTalon
 https://github.com/TalonSabre/PKLumiHeX/
 
+0.3.7   7-3-2023
+- Visibly show unavailable Pokemon
+  - If not present in Luminescent Platinum 2.0F, it will display as Ditto
+
+0.3.6.1 was a quick fix to remove lingering "None" items
+
 0.3.6     7-2-2023
 - Dex Editor will read and write genders seen correctly
   - Previously would uncheck all genders for the 3 Pokemon below the selected one

@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using PKHeX.Core;
 using PKHeX.Drawing.PokeSprite.Properties;
@@ -96,18 +97,43 @@ public abstract class SpriteBuilder : ISpriteBuilder<Image>
         _ => form,
     };
 
-    private static bool IsLumiForm(ushort species, byte form)
+    private static bool IsNotInLumi(ushort species, byte form)
     {
-        return (Species)species switch
+        foreach (ushort naspecies in FormInfo.WithUnavailableForm)
         {
-            Species.Venusaur or Species.Blastoise or Species.Gengar or Species.Eevee when form == 3 => true,
-            Species.Charizard when form == 4 => true,
-            Species.Pikachu when form == 17 => true,
-            Species.Onix when form == 1 => true,
-            Species.Mewtwo when form == 3 || form == 4 => true,
-            _ => false
+            if (species == naspecies)
+            {
+                var forms = FormInfo.Unavailable(species);
+
+                if (forms == Array.Empty<byte>()) return false;
+
+                for (int i = 0; i < forms.Length; i++)
+                {
+                    if (form != forms[i]) continue;
+                    return true;
+                }
+            }
         };
+
+        foreach (ushort inspecies in FormInfo.NewGenAvailables)
+        {
+            if (species == inspecies)
+                return false;
+        };
+
+        if (species < 494) return false;
+        else return true;
     }
+
+    private static bool IsLumiForm(ushort species, byte form) => (Species)species switch
+    {
+        Species.Venusaur or Species.Blastoise or Species.Gengar or Species.Eevee when form == 3 => true,
+        Species.Charizard when form == 4 => true,
+        Species.Pikachu when form == 17 => true,
+        Species.Onix when form == 1 => true,
+        Species.Mewtwo when form == 3 || form == 4 => true,
+        _ => false
+    };
 
     /// <summary>
     /// Builds a new sprite image with the requested parameters.
@@ -171,9 +197,13 @@ public abstract class SpriteBuilder : ISpriteBuilder<Image>
 
     private Image? GetBaseImageDefault(ushort species, byte form, int gender, uint formarg, bool shiny, EntityContext context)
     {
-        var lumi = (Game is GameVersion.BDSPLUMI && IsLumiForm(species, form));
+        var lumi = Game is GameVersion.BDSPLUMI;
+        var turnDitto = IsNotInLumi(species, form);
+        var lumiForm = IsLumiForm(species, form);
 
-        var file = lumi ? GetLumiSprite(species, form, gender, formarg, shiny)
+        var file = lumi ? lumiForm ? GetLumiSprite(species, form, gender, formarg, shiny)
+            : turnDitto ? GetSpriteAll((ushort)Species.Ditto, 0, 0, 0, false, context)
+            : GetSpriteAll(species, form, gender, formarg, shiny, context)
             : GetSpriteAll(species, form, gender, formarg, shiny, context);
 
         var resource = (Image?)Resources.ResourceManager.GetObject(file);

@@ -122,6 +122,77 @@ public static class FormInfo
 
     public static bool IsFormChangeEgg(ushort species) => FormChangeEgg.Contains(species);
 
+    /// <summary>
+    /// Species forms that cannot be found in Luminescent Platinum 2.0F.
+    /// </summary>
+    /// <remarks>Only includes those introduced before gen 5</remarks>
+    public static byte[] Unavailable(ushort species) => species switch
+    {
+        (ushort)Butterfree or (ushort)Beedrill or (ushort)Pidgeot or (ushort)Alakazam or (ushort)Machamp or (ushort)Slowbro
+        or (ushort)Dewgong or (ushort)Kingler or (ushort)Kangaskhan or (ushort)Pinsir or (ushort)Gyarados or (ushort)Lapras
+        or (ushort)Aerodactyl or (ushort)Snorlax
+        or (ushort)Ampharos or (ushort)Wooper or (ushort)Steelix or (ushort)Scizor or (ushort)Heracross or (ushort)Houndoom or (ushort)Tyranitar
+        or (ushort)Sceptile or (ushort)Blaziken or (ushort)Swampert or (ushort)Gardevoir or (ushort)Sableye or (ushort)Mawile
+        or (ushort)Aggron or (ushort)Medicham or (ushort)Manectric or (ushort)Sharpedo or (ushort)Camerupt or (ushort)Altaria
+        or (ushort)Banette or (ushort)Absol or (ushort)Glalie or (ushort)Salamence or (ushort)Metagross
+        or (ushort)Latias or (ushort)Latios or (ushort)Kyogre or (ushort)Groudon or (ushort)Rayquaza
+        or (ushort)Lopunny or (ushort)Garchomp or (ushort)Lucario or (ushort)Abomasnow or (ushort)Gallade
+        or (ushort)Dialga or (ushort)Palkia => (new byte[] { 1 }),
+
+        (ushort)Raticate or (ushort)Marowak or (ushort)Eevee => (new byte[] { 2 }),
+
+        (ushort)Meowth => (new byte[] { 3 }),
+
+        (ushort)Venusaur or (ushort)Blastoise or (ushort)Gengar or (ushort)Mewtwo => (new byte[] {1, 2}),
+
+        (ushort)Charizard or (ushort)Tauros => (new byte[] {1, 2, 3}),
+
+        (ushort)Pikachu => (new byte[] {7, 8, 9, 10, 11, 12, 13, 14, 15, 16}),
+
+        _ => ((Array.Empty<byte>()))
+    };
+
+    /// <summary>
+    /// Species that can be found in Luminescent Platinum 2.0F.
+    /// </summary>
+    /// <remarks>Only includes those introduced beyond gen 4</remarks>
+    public static readonly HashSet<ushort> NewGenAvailables = new()
+    {
+        (ushort)Sylveon,
+        (ushort)Perrserker, (ushort)Sirfetchd, (ushort)MrRime, (ushort)Cursola, (ushort)Obstagoon,
+        (ushort)Kleavor, (ushort)Overqwil, (ushort)Sneasler, (ushort)Wyrdeer, (ushort)Ursaluna
+    };
+
+    /// <summary>
+    /// Species with forms that cannot be found in Luminescent Platinum 2.0F.
+    /// </summary>
+    /// <remarks>Only includes those introduced before gen 5</remarks>
+    public static readonly HashSet<ushort> WithUnavailableForm = new()
+    {
+        (ushort)Venusaur, (ushort)Charizard, (ushort)Blastoise, (ushort)Alakazam, (ushort)Gengar,
+        (ushort)Kangaskhan, (ushort)Pinsir, (ushort)Gyarados, (ushort)Aerodactyl, (ushort)Mewtwo,
+        (ushort)Beedrill, (ushort)Pidgeot, (ushort)Slowbro,
+        (ushort)Raticate, (ushort)Marowak,
+        (ushort)Butterfree, (ushort)Pikachu, (ushort)Meowth, (ushort)Machamp, (ushort)Kingler,
+        (ushort)Lapras, (ushort)Eevee, (ushort)Snorlax,
+        (ushort)Tauros,
+        (ushort)Dewgong,
+
+        (ushort)Ampharos, (ushort)Scizor, (ushort)Heracross, (ushort)Houndoom, (ushort)Tyranitar,
+        (ushort)Steelix,
+        (ushort)Wooper,
+
+        (ushort)Blaziken, (ushort)Gardevoir, (ushort)Mawile, (ushort)Aggron, (ushort)Medicham,
+        (ushort)Manectric, (ushort)Banette, (ushort)Absol, (ushort)Latias, (ushort)Latios,
+        (ushort)Sceptile, (ushort)Swampert, (ushort)Sableye, (ushort)Sharpedo, (ushort)Camerupt,
+        (ushort)Altaria, (ushort)Glalie, (ushort)Salamence, (ushort)Metagross, 
+        (ushort)Groudon, (ushort)Kyogre, (ushort)Rayquaza,
+
+        (ushort)Garchomp, (ushort)Lucario, (ushort)Abomasnow,
+        (ushort)Lopunny, (ushort)Gallade,
+        (ushort)Dialga, (ushort)Palkia,
+    };
+
     private static ReadOnlySpan<ushort> FormChangeEgg => new ushort[]
     {
         (int)Burmy,
