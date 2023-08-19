@@ -43,17 +43,12 @@
     </ul>
 </div>
 <div>
-    <h3 align=left>Features untested on Luminescent Platinum saves</h3>
-    <ul>
-        <li><h5>Underground Bag Editor</h5></li>
-        <li><h5>Poffin Editor</h5></li>
-    </ul>
-</div>
-<div>
     <h3 align=left>Unimplemented Features</h3>
     <ul>
         <li><h4>Event Flags Editor</h4></li>
         <ul><li>Does not contain new flags</li></ul>
+        <li><h4>Misc Editor</h4></li>
+        <ul><li>As of now, these buttons can have adverse effects.</li></ul>
     </ul>
 </div>
 <div>
