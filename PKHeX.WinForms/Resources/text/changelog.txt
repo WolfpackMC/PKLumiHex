@@ -1,6 +1,10 @@
 PKLumiHeX - Authored by Red., Updated by PrinceTalon
 https://github.com/TalonSabre/PKLumiHeX/
 
+0.4.0 	11-2-2023
+- Support Luminescent 2.0.1F Pokemon additions
+- Remove Misc and Flags Editor for Lumi saves
+
 0.3.7   7-3-2023
 - Visibly show unavailable Pokemon
   - If not present in Luminescent Platinum 2.0F, it will display as Ditto

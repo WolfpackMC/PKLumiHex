@@ -1118,13 +1118,13 @@ public partial class SAVEditor : UserControl, ISlotViewer<PictureBox>, ISaveFile
         B_OpenPokedex.Visible = sav.HasPokeDex;
         B_OpenBerryField.Visible = sav is SAV6XY; // oras undocumented
         B_OpenFriendSafari.Visible = sav is SAV6XY;
-        B_OpenEventFlags.Visible = sav is IEventFlag37 or SAV1 or SAV2 or SAV8BS or SAV7b;
+        B_OpenEventFlags.Visible = sav is IEventFlag37 or SAV1 or SAV2 or (SAV8BS and not SAV8BSLuminescent) or SAV7b;
         B_CGearSkin.Visible = sav.Generation == 5;
         B_OpenPokeBeans.Visible = B_CellsStickers.Visible = B_FestivalPlaza.Visible = sav is SAV7;
 
         B_OtherSlots.Visible = sav is SAV1StadiumJ or SAV1Stadium or SAV2Stadium;
         B_OpenTrainerInfo.Visible = B_OpenItemPouch.Visible = (sav.HasParty && SAV is not SAV4BR) || SAV is SAV7b; // Box RS & Battle Revolution
-        B_OpenMiscEditor.Visible = sav is SAV3 or SAV4 or SAV5 or SAV8BS;
+        B_OpenMiscEditor.Visible = sav is SAV3 or SAV4 or SAV5 or (SAV8BS and not SAV8BSLuminescent);
         B_Roamer.Visible = sav is SAV3;
 
         B_OpenHoneyTreeEditor.Visible = sav is SAV4Sinnoh;

@@ -123,7 +123,7 @@ public static class FormInfo
     public static bool IsFormChangeEgg(ushort species) => FormChangeEgg.Contains(species);
 
     /// <summary>
-    /// Species forms that cannot be found in Luminescent Platinum 2.0F.
+    /// Species forms that cannot be found in Luminescent Platinum 2.0.1F.
     /// </summary>
     /// <remarks>Only includes those introduced before gen 5</remarks>
     public static byte[] Unavailable(ushort species) => species switch
@@ -153,18 +153,20 @@ public static class FormInfo
     };
 
     /// <summary>
-    /// Species that can be found in Luminescent Platinum 2.0F.
+    /// Species that can be found in Luminescent Platinum 2.0.1F.
     /// </summary>
     /// <remarks>Only includes those introduced beyond gen 4</remarks>
     public static readonly HashSet<ushort> NewGenAvailables = new()
     {
+        (ushort)Litwick, (ushort)Lampent, (ushort)Chandelure,
         (ushort)Sylveon,
         (ushort)Perrserker, (ushort)Sirfetchd, (ushort)MrRime, (ushort)Cursola, (ushort)Obstagoon,
-        (ushort)Kleavor, (ushort)Overqwil, (ushort)Sneasler, (ushort)Wyrdeer, (ushort)Ursaluna
+        (ushort)Kleavor, (ushort)Overqwil, (ushort)Sneasler, (ushort)Wyrdeer, (ushort)Ursaluna,
+        (ushort)Tinkatink, (ushort)Tinkatuff, (ushort)Tinkaton
     };
 
     /// <summary>
-    /// Species with forms that cannot be found in Luminescent Platinum 2.0F.
+    /// Species with forms that cannot be found in Luminescent Platinum 2.0.1F.
     /// </summary>
     /// <remarks>Only includes those introduced before gen 5</remarks>
     public static readonly HashSet<ushort> WithUnavailableForm = new()
