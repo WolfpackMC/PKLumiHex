@@ -43,15 +43,6 @@
     </ul>
 </div>
 <div>
-    <h3 align=left>Unimplemented Features</h3>
-    <ul>
-        <li><h4>Event Flags Editor</h4></li>
-        <ul><li>Does not contain new flags</li></ul>
-        <li><h4>Misc Editor</h4></li>
-        <ul><li>As of now, these buttons can have adverse effects.</li></ul>
-    </ul>
-</div>
-<div>
     <h3 align=left>Known 'Issues'</h3>
     <ul>
         <li><h4>Certain Pokémon show up as a Ditto</h4></li>
