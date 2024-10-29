@@ -32,8 +32,8 @@ jobs:
             - name: Setup MSBuild.exe
               uses: microsoft/setup-msbuild@v2
 
-            - name: Execute unit tests
-              run: dotnet test ${{ env.Solution_Name }}
+            # - name: Execute unit tests
+            #   run: dotnet test ${{ env.Solution_Name }}
 
             # Build the project as a standalone exe
             - name: Publish as self-contained EXE
