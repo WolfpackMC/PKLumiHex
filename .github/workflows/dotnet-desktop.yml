@@ -1,0 +1,46 @@
+name: .NET Core Desktop (Standalone EXE)
+
+on:
+    push:
+        branches: ["random-ivs-greater-rating"]
+    pull_request:
+        branches: ["random-ivs-greater-rating"]
+
+jobs:
+    build:
+        strategy:
+            matrix:
+                configuration: [Release]
+
+        runs-on: windows-latest
+
+        env:
+            Solution_Name: PKHeX.sln
+            Project_Path: PKHex.WinForms\PKHeX.WinForms.csproj
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Install .NET Core
+              uses: actions/setup-dotnet@v4
+              with:
+                  dotnet-version: 8.0.x
+
+            - name: Setup MSBuild.exe
+              uses: microsoft/setup-msbuild@v2
+
+            - name: Execute unit tests
+              run: dotnet test ${{ env.Solution_Name }}
+
+            # Build the project as a standalone exe
+            - name: Publish as self-contained EXE
+              run: dotnet publish ${{ env.Project_Path }} --configuration Release --runtime win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishReadyToRun=true -o ./output
+            # Upload the EXE build as an artifact
+            - name: Upload build artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                  name: Standalone EXE
+                  path: ./output
