@@ -439,7 +439,7 @@ public partial class StatEditor : UserControl
                     <= 120 => 1,
                     <= 150 => 2,
                     _ => 3,
-                }
+                };
 
                 if (rating >= 3) { break; }
             }
