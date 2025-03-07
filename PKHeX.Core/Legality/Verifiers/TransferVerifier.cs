@@ -152,6 +152,7 @@ public sealed class TransferVerifier : Verifier
         IPersonalTable pt = pk switch
         {
             PA8 => PersonalTable.LA,
+            PB8LUMI => PersonalTable.BDSPLUMI,
             PB8 => PersonalTable.BDSP,
             _ => PersonalTable.SWSH,
         };
