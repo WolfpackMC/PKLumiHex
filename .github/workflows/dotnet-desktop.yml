@@ -40,7 +40,7 @@ jobs:
               run: dotnet publish ${{ env.Project_Path }} --configuration Release --runtime win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishReadyToRun=true -o ./output
             # Upload the EXE build as an artifact
             - name: Upload build artifacts
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: Standalone EXE
                   path: ./output
