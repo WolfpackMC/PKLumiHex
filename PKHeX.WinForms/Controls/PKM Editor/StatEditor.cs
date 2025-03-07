@@ -428,20 +428,18 @@ public partial class StatEditor : UserControl
             ivs.Clear();
         else
         {
+            var pk = Entity;
             while (true) {
-                var pk = Entity;
-                var la = new LegalityAnalysis(pk);
-                var enc = la.EncounterMatch;
-                if (enc is IFlawlessIVCount { FlawlessIVCount: not 0 } fc)
-                    pk.SetRandomIVs(ivs, fc.FlawlessIVCount);
-                else if (enc is IFixedIVSet { IVs: { IsSpecified: true } iv })
-                    pk.SetRandomIVs(ivs, iv);
-                else if (enc is IFlawlessIVCountConditional c && c.GetFlawlessIVCount(pk) is { Max: not 0 } x)
-                    pk.SetRandomIVs(ivs, Util.Rand.Next(x.Min, x.Max + 1));
-                else
-                    pk.SetRandomIVs(ivs);
+                pk.SetRandomIVs(ivs);
 
-                var rating = PowerPotential.GetPotential(pk.IV_HP + pk.IV_ATK + pk.IV_DEF + pk.IV_SPA + pk.IV_SPD + pk.IV_SPE);
+                var total = pk.IV_HP + pk.IV_ATK + pk.IV_DEF + pk.IV_SPA + pk.IV_SPD + pk.IV_SPE;
+
+                var rating = total switch {
+                    <= 90 => 0,
+                    <= 120 => 1,
+                    <= 150 => 2,
+                    _ => 3,
+                }
 
                 if (rating >= 3) { break; }
             }
